@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Material Platform</title>
+    <link rel="stylesheet" type= "text/css" href="src/css/header.css">
+    <link rel="stylesheet" type="text/css" href="src/css/home.css">
+</head>
+<body>
+    <header id="header">
+        <a href="#" class="logo">EduMaterial</a>
+        <div class="toggle"></div>
+        <ul class="navigation">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">Donate</a></li>
+            <li><a href="#">Material</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Login</a></li>
+        </ul>
+    </header>
+    <section>
+        <h2 id="home_text">e-Material</h2>
+        <img src="src/image/home/stars.png" id="star">
+        <img src="src/image/home/stars2.png" id="star2">
+        <img src="src/image/home/rock.png" id="rock">
+        <img src="src/image/home/kucing.svg" id="cat">
+        <img src="src/image/home/night_back.svg" id="night">
+    </section>
+
+    <div class="sec">
+        <h2>Educational Material Platform</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dolor dolor, malesuada nec tincidunt consectetur, faucibus in libero. Vestibulum nunc turpis, fringilla sed leo non, semper rutrum mi. Cras vel ornare felis, id pulvinar magna. Donec feugiat iaculis lacus eget vehicula. Sed mauris ipsum, eleifend non convallis eu, ornare sit amet nisl. Pellentesque dolor lectus, egestas eu ullamcorper ac, commodo sit amet risus. Donec dignissim felis in elit eleifend finibus. Ut in orci at nibh dapibus blandit in at sapien. Quisque mollis in lorem vitae maximus. <br> <br>
+Integer ex nibh, tempus eu tempus eu, porttitor eget tortor. Donec nec dapibus augue. Aenean bibendum nibh ac nunc bibendum finibus. Ut vehicula justo semper urna porta, sit amet egestas risus convallis. Aliquam non porttitor orci. Morbi dapibus lacus et mi sagittis tincidunt. Nam euismod in turpis vitae pharetra. Nullam nec lobortis mauris. Praesent ac imperdiet elit. Vivamus tristique, ligula lacinia tincidunt imperdiet, lectus ligula pretium tellus, et congue risus est nec enim. Nulla suscipit quam a nunc vestibulum, sodales eleifend ligula dignissim.
+Integer molestie luctus congue. In tempor luctus lacus, vel condimentum massa rhoncus nec. Nullam ut viverra purus. Cras placerat hendrerit urna, congue porta ipsum faucibus sit amet. <br> <br>
+Praesent vel pellentesque dui, eu aliquet nisl. Donec eu gravida dui. Aenean in cursus purus. Vivamus eu porta leo, ac dictum purus. Aenean ante mi, iaculis quis interdum eget, suscipit a urna. Cras sagittis arcu et bibendum commodo. In vel eros nec neque scelerisque venenatis.
+<br> <br> Curabitur non tortor suscipit, pulvinar ipsum in, tempor enim. Pellentesque suscipit dui ut augue lacinia, eu rutrum tellus rhoncus. Ut malesuada velit tellus, vel vehicula lectus convallis vel. Vestibulum aliquam eros maximus risus porta eleifend. Cras ut laoreet nibh. Suspendisse eu vestibulum nisi. Morbi ut magna sollicitudin, vehicula sem vel, egestas risus. Nunc viverra nisi tellus, ac tincidunt ante viverra id. Etiam rutrum finibus ligula vitae ultricies. Nulla tempor ipsum ac tincidunt viverra. Donec sem sem, vulputate eu viverra molestie,
+tincidunt sit amet sapien. Donec rhoncus consectetur convallis. Nullam nec fermentum lorem. Donec aliquet velit feugiat, semper sem vehicula, scelerisque lorem. Duis accumsan varius dui, eu tempor quam pharetra non. Quisque auctor lacus leo, in ultrices tortor dictum nec. <br><br>
+Phasellus nec scelerisque eros, sed lobortis turpis. Fusce ultricies imperdiet neque ac maximus. Donec id felis sit amet risus tincidunt eleifend feugiat sed augue. Phasellus eget felis at nisl tincidunt tempor et et urna. Curabitur quis tortor consequat, hendrerit est in, molestie est. Nulla facilisi.
+Mauris in eros id leo vehicula sollicitudin ac vel ligula. Mauris feugiat malesuada ligula in dapibus. Pellentesque eget augue ac tellus luctus sollicitudin. Aenean arcu massa, efficitur nec feugiat sit amet, tempus at est. Aenean tincidunt tincidunt nunc, blandit feugiat metus lacinia non.   
+        </p>
+    </div>
+    <script>
+        let cat = document.getElementById('cat');
+        let night = document.getElementById('night');
+        let home_text = document.getElementById('home_text');
+        let header = document.getElementById('header');
+        let star = document.getElementById('star');
+        let star2 = document.getElementById('star2');
+        let rock = document.getElementById('rock');
+
+        window.addEventListener('scroll', function() {
+            let value = window.scrollY;
+            star.style.bottom = value * 0.05 + '%';
+            star2.style.bottom = value * 0.025 + '%';
+            rock.style.bottom = value * -0.35 + 'px';
+            cat.style.bottom = value * -0.3 + 'px';
+            home_text.style.right = 20 + value * 0.35 + '%';
+            home_text.style.top = 30 + value * 0.05 + '%';
+            header.style.top = value * 0.2 + 'px';
+        })
+
+        const toggleMenu = document.querySelector('.toggle');
+        const navMenu = document.querySelector('.navigation');
+
+        toggleMenu.onclick = function() {
+            toggleMenu.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

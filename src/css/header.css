@@ -1,0 +1,100 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap);
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    background: linear-gradient(#8b016a, #6f1159);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+#header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+}
+#header .logo {
+    color: #fff;
+    font-weight: 700;
+    font-size: 2em;
+    text-decoration: none;
+}
+#header  .navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#header .navigation li {
+    list-style: none;
+    margin-left: 20px;
+}
+#header .navigation li a {
+    text-decoration: none;
+    padding: 6px 15px;
+    color: #fff;
+    border-radius: 20px;
+}
+#header .navigation li a:hover,
+#header .navigation li a.active {
+    background-color: #fff;
+    color: #111;
+}
+@media (max-width: 800px) {
+    #header {
+        padding: 20px;
+    }
+    #header .logo {
+        font-size: 1.5em;
+    }
+    #header .navigation {
+        display: none;
+    }
+    #header .navigation.active {
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        background: #6f1159;
+    }
+    #header .navigation li {
+        margin-left: 0;
+    }
+    #header .navigation li a {
+        font-size: 1.2em;
+        margin: 5px 0;
+        display: inline-block;
+        border-radius: 30px;
+    }
+    .toggle {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        background: url(src/image/menu/hamburger.png);
+        background-size: 30px;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 1000;
+    }
+    .toggle.active {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: url(src/image/menu/close.png);
+        background-size: 23px;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
