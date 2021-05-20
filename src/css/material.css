@@ -1,0 +1,90 @@
+.sidebar {
+    position: absolute;
+    top: 110px;
+    width: 15%;
+    height: 85%;
+    background: #2a3064;
+    text-align: center;
+}
+.sidebar #title {
+    margin: 10px;
+    font-size: 1.3em;
+    color: white;
+}
+.sidebar #subject-list {
+    display: list-item;
+    position: relative;
+}
+.sidebar ul li div a {
+    margin: 20px;
+}
+.sidebar #subject-list li {
+    background-color: #bf0693;
+    list-style: none;
+    margin: 10px 10px;
+    height: 5vh;
+    text-decoration: none;
+}
+.sidebar #subject-list li a {
+    position: relative;
+    color: white;
+    top: 15%;
+    text-decoration: none;
+}
+.sidebar #subject-list li:hover {
+    font-weight: bolder;
+    background-color: #8b016a;
+    color: #111;
+}
+.sidebar #subject-list li.active {
+    font-weight: bolder;
+    background-color: #8b016a;
+    color: #111;
+    border: 1px solid #fff;
+}
+
+.main{
+    position: absolute;
+    top: 110px;
+    right: 0;
+    width: 84.5%;
+    height: 85%;
+    background: #2a3064;
+    text-align: center;
+    text-align: left;
+}
+.main h2 {
+    margin-top: 20px;
+    margin-left: 40px;
+    color: #fff;
+    text-decoration: underline;
+}
+#video {
+    margin: 25px;
+    border: 3px double #fff;
+    
+}
+#book {
+    margin: 25px;
+    border: 3px double #fff;
+    
+}
+.main h3 {
+    color: #fff;
+}
+.topic-list ul {
+    margin: 10px;
+    padding-left: 10px;
+}
+.topic-list ul li {
+    margin: 10px;
+    color: #fff;
+}
+.topic-list ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+.topic-list ul li a:hover {
+    text-decoration: underline;
+    color: #fff;
+}

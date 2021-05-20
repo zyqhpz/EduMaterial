@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduMaterial | About Us</title>
+    
+    <link rel="stylesheet" type= "text/css" href="/src/css/header.css">
+    <link rel="stylesheet" type="text/css" href="/src/css/about_us.css">
+     
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rancho&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!-- ======= General Section ======= -->
+    <header id="header">
+        <a href="/index.html" class="logo">EduMaterial</a>
+        <div class="toggle"></div>
+        <ul class="navigation">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="#">Donate</a></li>
+            <li><a href="/page/material/math.html">Material</a></li>
+            <li><a href="#"class="active">About Us</a></li>
+            <li><a href="#">Login</a></li>
+        </ul>
+    </header>
+    <section>
+        <h2 id="home_text">About Us</h2>
+        <h2 id="sub_text">Are we from Pluto?</h2>
+        <img src="/src/image/home/stars.png" id="star">
+        <img src="/src/image/home/stars2.png" id="star2">
+        <img src="/src/image/home/rock.png" id="rock">
+        <img src="/src/image/home/kucing.svg" id="cat">
+        <img src="/src/image/home/night_back.svg" id="night">
+    </section>
+
+    <script>
+        let cat = document.getElementById('cat');
+        let night = document.getElementById('night');
+        let sub_text = document.getElementById('sub_text');
+        let header = document.getElementById('header');
+        let star = document.getElementById('star');
+        let star2 = document.getElementById('star2');
+        let rock = document.getElementById('rock');
+
+        window.addEventListener('scroll', function() {
+            let value = window.scrollY;
+            star.style.bottom = value * 0.05 + '%';
+            star2.style.bottom = value * 0.025 + '%';
+            rock.style.bottom = value * -0.35 + 'px';
+            cat.style.bottom = value * -0.3 + 'px';
+            sub_text.style.right = 20 + value * 0.35 + '%';
+            sub_text.style.top = 45 + value * 0.04 + '%';
+            header.style.top = value * 0.2 + 'px';
+        })
+    </script>
+
+    <!-- ======= Desc Section ======= -->
+    <section id="desc" class="desc">
+        <div class="container">
+  
+          <div class="text-center">
+            <h3>Hello</h3>
+            <p> We know how it is hard to find the right reference materials during your studies. Especially to those who do not have any contacts to any seniors, or those who are not in elite cluster to just buy them.  We have brainstormed between our members to contribute to the community a brilliant system which focusing on education field. Kind-hearted people who love to donate are most welcomed here as this the latest educational materials donation platform. Do not throw it away! Help others by donating your precious education materials here!</p>
+          </div>
+          <a href="#" class="desc-btn" href="#">Donate Now</a>
+        </div>
+      </section><!-- End Desc Section -->
+
+     <!-- ======= Team Section ======= -->
+     <section2 id="team" class="team'">
+        <div class="text-center">
+            <h2>Get to See Us</h2>
+        </div>
+     <div class="container">
+         <div class="card">
+             <div class="content">
+                 <div class="imgBx"><img src="\src\image\team\zyqq.jpg"></div>
+                 <div class="content8x">
+                     <h3>Someone Funny<br><span>Creative Designer</span></h3>
+                    </div>
+                </div>
+                <ul class="sci">
+                    <li style="--i:1">
+                        <a><img src ="\src\image\icon\facebook.png"></a>
+                    </li>
+                    <li style="--i:2">
+                        <a><img src ="\src\image\icon\twitter.png"></a>
+                    </li>
+                    <li style="--i:3">
+                        <a><img src ="\src\image\icon\instagram.png"></a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <div class="content">
+                    <div class="imgBx"><img src="\src\image\team\farah.jpg"></div>
+                    <div class="content8x">
+                        <h3>Someone Friendly<br><span>Marketing Executive</span></h3>
+                    </div>
+                </div>
+                <ul class="sci">
+                    <li style="--i:1">
+                        <a><img src ="\src\image\icon\facebook.png"></a>
+                    </li>
+                    <li style="--i:2">
+                        <a><img src ="\src\image\icon\twitter.png"></a>
+                    </li>
+                    <li style="--i:3">
+                        <a><img src ="\src\image\icon\instagram.png"></a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <div class="content">
+                    <div class="imgBx"><img src="\src\image\team\abdullah.jpg"></div>
+                    <div class="content8x">
+                        <h3>Someone Smart<br><span>Software Developer</span></h3>
+                    </div>
+                </div>
+                <ul class="sci">
+                    <li style="--i:1">
+                        <a><img src ="/src/image/icon/facebook.png"></a>
+                    </li>
+                    <li style="--i:2">
+                        <a><img src ="\src\image\icon\twitter.png"></a>
+                    </li>
+                    <li style="--i:3">
+                        <a><img src ="\src\image\icon\instagram.png"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section2><!-- End Team Section -->
+    <script src="/src/js/header.js"></script>
+</body>
+</html>

@@ -4,27 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Education Material Platform</title>
+    <title>EduMaterial</title>
     <link rel="stylesheet" type= "text/css" href="src/css/header.css">
     <link rel="stylesheet" type="text/css" href="src/css/home.css">
-</head>
-<body>
-    <header id="header">
-        <a href="#" class="logo">EduMaterial</a>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
+    <!-- <script src="/src/js/header.js"></script> -->
+
+    <nav id="header">
+        <a href="index.html" class="logo">EduMaterial</a>
         <div class="toggle"></div>
         <ul class="navigation">
-            <li><a href="#" class="active">Home</a></li>
+            <li><a href="index.html" class="active">Home</a></li>
             <li><a href="#">Donate</a></li>
-            <li><a href="#">Material</a></li>
-            <li><a href="#">About Us</a></li>
+            <li><a href="page/material/math.html">Material</a></li>
+            <li><a href="page/about-us/about_us.html">About Us</a></li>
             <li><a href="#">Login</a></li>
         </ul>
-    </header>
+    </nav>
+</head>
+<body>
     <section>
-        <h2 id="home_text">e-Material</h2>
         <img src="src/image/home/stars.png" id="star">
         <img src="src/image/home/stars2.png" id="star2">
         <img src="src/image/home/rock.png" id="rock">
+        <h2 id="home_text">Free Education For All</h2>
         <img src="src/image/home/kucing.svg" id="cat">
         <img src="src/image/home/night_back.svg" id="night">
     </section>
@@ -54,21 +58,14 @@ Mauris in eros id leo vehicula sollicitudin ac vel ligula. Mauris feugiat malesu
         window.addEventListener('scroll', function() {
             let value = window.scrollY;
             star.style.bottom = value * 0.05 + '%';
-            star2.style.bottom = value * 0.025 + '%';
+            star2.style.bottom = value * 0.1 + '%';
             rock.style.bottom = value * -0.35 + 'px';
-            cat.style.bottom = value * -0.3 + 'px';
-            home_text.style.right = 20 + value * 0.35 + '%';
+            cat.style.bottom = value * -0.5 + 'px';
+            home_text.style.right = 10 + value * 0.35 + '%';
             home_text.style.top = 30 + value * 0.05 + '%';
             header.style.top = value * 0.2 + 'px';
         })
-
-        const toggleMenu = document.querySelector('.toggle');
-        const navMenu = document.querySelector('.navigation');
-
-        toggleMenu.onclick = function() {
-            toggleMenu.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        }
     </script>
+    <script src="/src/js/header.js"></script>
 </body>
 </html>

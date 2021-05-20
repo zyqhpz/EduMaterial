@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduMaterial | Admin</title>
+    <link rel="stylesheet" type="text/css" href="/src/css/header.css">
+    <link rel="stylesheet" type="text/css" href="/src/css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
+    
+    <nav id="header">
+        <a href="/index.html" class="logo">EduMaterial</a>
+        <div class="toggle"></div>
+        <ul class="navigation">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="#">Donate</a></li>
+            <li><a href="math.html" class="active">Material</a></li>
+            <li><a href="/page/about-us/about_us.html">About Us</a></li>
+            <li><a href="#">Login</a></li>
+        </ul>
+    </nav>
+</head>
+<body>
+    <div class="sidebar">
+        <h1 id="title">Admin Dashboard</h1>
+        <hr>  
+        <ul id="subject-list">
+            <li class="active"><a href="#">Manage Donator</a></li>
+            <!-- <li><a href="sci.html">Science</a></li>
+            <li><a href="cs.html">Computer Science</a></li>
+            <li><a href="#">Others</a></li> -->
+        </ul>
+    </div>
+    <div class="main">
+        <h2>Donator Namelist</h2>
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Donator</th>
+                    <th>Email</th>
+                    <th>Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Jake Jaxon</td>
+                    <td>jake.jaxon@gmail.com</td>
+                    <td>
+                        <button type="button" class="edit-btn">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button type="button" class="delete-btn">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+                <!-- <tr class="active-row"> -->
+                <tr>
+                    <td>Melissa Mei</td>
+                    <td>mel.mei@gmail.com</td>
+                    <td>
+                        <button type="button" class="edit-btn">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button type="button" class="delete-btn">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Dominic Toronto</td>
+                    <td>dom.t@gmail.com</td>
+                    <td>
+                        <button type="button" class="edit-btn">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button type="button" class="delete-btn">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+                <!-- and so on... -->
+            </tbody>
+        </table>
+    </div>
+    <script src="/src/js/header.js"></script>
+</body>
+</html>
