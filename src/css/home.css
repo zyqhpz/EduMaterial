@@ -17,6 +17,9 @@ section img {
 section img #star2 {
     bottom: -20;
 }
+section img #cat {
+  overflow: hidden;
+}
 #home_text {
     position: absolute;
     top: 30%;
@@ -49,8 +52,10 @@ section img #star2 {
     .sec h2 {
         font-size: 1.5em;
     }
-    section img #cat {
-        width: 20%;
+    #cat {
+      border: 5px solid black;
+      width: 50%;
+      margin: -10px 0px 0px -10px;
     }
     #home_text {
         font-size: 10vw;
