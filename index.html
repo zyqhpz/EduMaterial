@@ -7,6 +7,8 @@
     <title>EduMaterial</title>
     <link rel="stylesheet" type= "text/css" href="src/css/header.css">
     <link rel="stylesheet" type="text/css" href="src/css/home.css">
+    <link rel="stylesheet" href="src/css/chat_bot.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
 
@@ -28,12 +30,11 @@
         <img src="src/image/home/stars2.png" id="star2">
         <img src="src/image/home/rock.png" id="rock">
         <h2 id="home_text">Free Education For All</h2>
-        <img src="src/image/home/kucing.svg" id="cat">
+        <img src="src/image/home/cat.svg" id="cat">
         <img src="src/image/home/night_back.svg" id="night">
     </section>
-
     <div class="sec">
-        <p style="font-size:large; font-weight: 500">This website was developed as an action to achieve Goal 4 (Quality Education) of Sustainable Development Goals by UN. </p>
+        <p id="disclaimer" style="font-size:large; font-weight: 500">This website was developed as an action to achieve Goal 4 (Quality Education) of Sustainable Development Goals by UN. </p>
         <h2>What Is Sustainable Development Goals?</h2>
         <p>
             In September 2015, the General Assembly adopted the 2030 Agenda for Sustainable
@@ -73,14 +74,45 @@
                 What can we do?
                 Ask our governments to place education as a priority in both policy and practice. Lobby our governments to make firm commitments to provide free primary school education to all, including vulnerable or marginalized groups.
                 To find out more about Goal #4 and other Sustainable Development Goals, visit:
-                <a style="color: white;" target="_blank" href="http://www.un.org/sustainabledevelopment">http://www.un.org/sustainabledevelopment</a> 
+                <a style="color: white;" target="_blank" href="http://www.un.org/sustainabledevelopment">http://www.un.org/sustainabledevelopment.</a> 
         </p>
     </div>
+    <footer>
+        <span id="bot">
+            <input type="checkbox" id="click">
+            <label for="click">
+            <i id="paw" class="fas fa-paw"></i>
+            <i id="cl" class="far fa-times-circle"></i>
+            </label>
+            <div class='wrapper'>
+                <div class="head-text">CatBot</div>
+                <div id="dialogue"></div>
+                <form onSubmit="return chatbot.sendMessage()">
+                  <div class="text-box">
+                    <input type="text" name="message" id="message" autocomplete="off" disabled placeholder="Please wait... loading...">
+                    <input class="send-button" type="submit" value="">
+                  </div>
+                </form>
+              </div>
+        </span>
+        
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+        <script src="https://unpkg.com/rivescript@latest/dist/rivescript.min.js"></script>
+        <script src="/src/js/chat_bot.js"></script>
+        <script>
+            function setup() {
+                chatbot.loadFiles(['/src/bot/bot_reply.rive']);
+            }
+            window.onload = setup;
+        </script>
+    </footer>
     <div id="myModal" class="modal">
         <span class="close">&times;</span>
         <img class="modal-content" id="sdgGoals_1">
         <div id="caption"></div>
     </div>
+    
     <script>
         let cat = document.getElementById('cat');
         let night = document.getElementById('night');
@@ -89,6 +121,8 @@
         let star = document.getElementById('star');
         let star2 = document.getElementById('star2');
         let rock = document.getElementById('rock');
+        
+        var x = window.matchMedia("max-width: 700px");
 
         window.addEventListener('scroll', function() {
             let value = window.scrollY;
@@ -99,13 +133,9 @@
             home_text.style.right = 10 + value * 0.35 + '%';
             home_text.style.top = 30 + value * 0.05 + '%';
             header.style.top = value * 0.2 + 'px';
-        })
-
-        // Image Click Animation
-        // Get the modal
+        });
         var modal = document.getElementById("myModal");
 
-        // Get the image and insert it inside the modal - use its "alt" text as a caption
         var img = document.getElementById("sdgGoals");
         var modalImg = document.getElementById("sdgGoals_1");
         var captionText = document.getElementById("caption");
@@ -115,10 +145,8 @@
         captionText.innerHTML = this.alt;
         }
 
-        // Get the <span> element that closes the modal
         var span = document.getElementsByClassName("close")[0];
 
-        // When the user clicks on <span> (x), close the modal
         span.onclick = function() { 
         modal.style.display = "none";
         }

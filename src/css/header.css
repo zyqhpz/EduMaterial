@@ -58,7 +58,7 @@ body {
     color: #111;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 950px) {
     #header {
         padding: 20px;
     }

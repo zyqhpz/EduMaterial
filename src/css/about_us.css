@@ -16,8 +16,8 @@ section img {
     width: 100%;
     pointer-events: none;
 }
-section img #star {
-    left: -20;
+#star {
+    bottom: -20px;
 }
 #home_text {
     position: absolute;
@@ -38,6 +38,19 @@ section img #star {
     white-space: nowrap;
     text-shadow: 0 10px 15px rgba(0, 0, 0, 0.25);
     font-family: 'Rancho', cursive;
+}
+
+@media (max-width: 950px) {
+  #cat {
+    display: none;
+  }
+  #home_text {
+    font-size: 20vw;
+  }
+  #sub_text {
+    font-size: 7vw;
+    margin-right: 10%;
+  }
 }
 /*--------------------------------------------------------------
 # Description Section
@@ -89,10 +102,11 @@ section img #star {
     border: 2px solid #e43c5c;
   }
   
-  @media (min-width: 800px) {
+  @media (min-width: 950px) {
     .desc {
       background-attachment: fixed;
     }
+
   }
   /*--------------------------------------------------------------
 # Team Section
