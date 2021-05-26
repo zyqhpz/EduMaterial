@@ -15,9 +15,13 @@
         <ul class="navigation">
             <li><a href="/index.html">Home</a></li>
             <li><a href="#">Donate</a></li>
-            <li><a href="math.html" class="active">Material</a></li>
+            <li><a href="math.html">Material</a></li>
             <li><a href="/page/about-us/about_us.html">About Us</a></li>
-            <li><a href="#">Login</a></li>
+            <li><a id="log" href="#" class="active"><i class="fas fa-user"></i></a>
+                <ul>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </li>
         </ul>
     </nav>
 </head>
@@ -26,13 +30,16 @@
         <h1 id="title">Admin Dashboard</h1>
         <hr>  
         <ul id="subject-list">
-            <li class="active"><a href="#">Manage Donator</a></li>
-            <!-- <li><a href="sci.html">Science</a></li>
-            <li><a href="cs.html">Computer Science</a></li>
-            <li><a href="#">Others</a></li> -->
+            <li class="active">
+                <a href="#">
+                    <i class="fas fa-user-cog"></i>
+                    <span class="link-text">Manage Donator</span>
+                </a>
+            </li>
         </ul>
     </div>
     <div class="main">
+        <h1>Admin Dashboard</h1>
         <h2>Donator Namelist</h2>
         <table class="styled-table">
             <thead>

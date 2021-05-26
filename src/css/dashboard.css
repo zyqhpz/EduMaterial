@@ -20,8 +20,9 @@
     display: list-item;
     position: relative;
 }
-.sidebar ul li div a {
-    margin: 20px;
+.sidebar #subject-list li .link-text {
+    display: inline;
+    margin-left: 0;
 }
 .sidebar #subject-list li {
     background-color: #bf0693;
@@ -30,10 +31,14 @@
     height: 5vh;
     text-decoration: none;
 }
+.sidebar #subject-list li i {
+    width: 25px;
+}
 .sidebar #subject-list li a {
     position: relative;
     color: white;
-    top: 15%;
+    top: 10px;
+    bottom: 10px;
     text-decoration: none;
 }
 .sidebar #subject-list li:hover {
@@ -47,7 +52,20 @@
     color: #111;
     border: 1px solid #fff;
 }
-
+@media (max-width: 1320px) {
+    .sidebar h1,
+    .sidebar hr,
+    .sidebar #subject-list li .link-text{
+        display: none;
+    }
+    .sidebar #subject-list li{
+        height: 50px;
+        border-radius: 15px;
+    }
+    .sidebar #subject-list li i{
+        border-radius: 15px;
+    }
+}
 .main{
     position: absolute;
     top: 110px;
@@ -58,11 +76,34 @@
     text-align: center;
     text-align: left;
 }
+.main h1 {
+    display: none;
+    margin: 0 25%;
+    margin-top: 20px;
+}
+
 .main h2 {
     margin-top: 20px;
     margin-left: 40px;
     color: #fff;
     text-decoration: underline;
+}
+@media (max-width: 1320px) {
+    .main h1 {
+        font-size:larger;
+        display:block;
+        color: #fff;
+        text-align: center;
+        text-shadow: 1px 2px #111;
+        padding: 0 2px 0 2px;
+        border: 1px solid #fff;
+        background-color: #111;
+    }
+    .main h2 {
+        margin: 20px 25% 0 25%;
+        text-align: center;
+        font-size: large;
+    }
 }
 .styled-table {
     margin-left: 50px;

@@ -1,4 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap);
+:root {
+    --bg-primary: #8b016a;
+    --bg-secondary: #2a3064;
+}
 *{
     margin: 0;
     padding: 0;
@@ -51,6 +55,24 @@ body {
     color: #fff;
     border-radius: 20px;
 }
+#header .navigation ul {
+    position: absolute;
+    top: 60px;
+    display: none;
+}
+#header .navigation li ul li a{
+    color: #111;
+}
+#header .navigation li:hover > ul{
+    margin-top: 10px;
+    display: block;
+    padding: 6px 0;
+    color: #111;
+    background-color: white;
+}
+#header .navigation li:hover > #log{
+    border-radius: 0px;
+}
 #header .navigation li a:hover,
 #header .navigation li a img:hover,
 #header .navigation li a.active {
@@ -88,6 +110,17 @@ body {
         margin: 5px 0;
         display: inline-block;
         border-radius: 30px;
+    }
+    #header .navigation li:hover > ul{
+        top: 62%;
+        align-items: center;
+        display: flex;
+        color: #111;
+        background-color: white;
+        height: 5vh;
+    }
+    #header .navigation li:hover > #log{
+        border-radius: 0px;
     }
     .toggle {
         position: relative;
