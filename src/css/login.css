@@ -380,6 +380,29 @@ form {
   -o-transition: 0.5s all;
 }
 
+#btn-submit {
+  margin: 25px 0px 0px 0px;
+}
+#btn-submit {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  background: #2DC2BC;
+  padding: 8px 25px;
+  border-radius: 25px;
+}
+#btn-submit:hover{
+  background: rgb(219, 0, 0);
+  transition: 0.5s all;
+  -webkit-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  -o-transition: 0.5s all;
+}
+
+#btn-submit:disabled {
+  pointer-events: none;
+}
+
 /*--//content--*/
 
 
@@ -611,7 +634,7 @@ label.valid .passText{
 }
 label.invalid .emailText,
 label.invalid .passText{
-	color: #f00;
+	color: #fff;
 }
 label.valid::before,
 label.invalid::before{

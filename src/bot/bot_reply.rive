@@ -5,7 +5,7 @@
 + start 
 - Welcome to EduMaterial!
 
-+ [*] (hi|hello|hai) [*]
++ [*] (hi|hello|hai|hola) [*]
 - Hello Human!
 - Yoww Human!
 - Hi Human!
@@ -14,8 +14,14 @@
 - Hey!
 - Hi!
 
++ [*] your name [*]
+- My master called me CatBot.
+
 + how to donate
-- Go to donate page, you idiot!
+- Go to DONATE page!
+
++ [*] donate [*]
+- Donate your resources for better future!
 
 + what is (sdg|sustainable development goals)
 - Read at the homepage please.

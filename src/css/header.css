@@ -70,6 +70,10 @@ body {
     color: #111;
     background-color: white;
 }
+#log:hover > #header .navigation li{
+    color: #111;
+    background-color: white;
+}
 #header .navigation li:hover > #log{
     border-radius: 0px;
 }

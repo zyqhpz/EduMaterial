@@ -40,10 +40,12 @@ email.addEventListener('input',()=>{
     emailBox.classList.add('valid');
     emailBox.classList.remove('invalid');
     emailText.innerHTML = " "; 
+    document.getElementById("btn-submit").disabled = false;
   }else{
     emailBox.classList.add('invalid');
     emailBox.classList.remove('valid');
-    emailText.innerHTML = "<span>* Must be a valid email address."; 
+    emailText.innerHTML = "<span>* Must be a valid email address.";
+    document.getElementById("btn-submit").disabled = true;
   }
 });
 
@@ -55,10 +57,12 @@ password.addEventListener('input',()=>{
   if(password.value.match(passPattern)){
     passBox.classList.add('valid');
     passBox.classList.remove('invalid');
-    passText.innerHTML = " "; 
+    passText.innerHTML = " ";
+    document.getElementById("btn-submit").disabled = false;
   }else{
     passBox.classList.add('invalid');
     passBox.classList.remove('valid');
-    passText.innerHTML = "<span>* Your password must be at least 6 characters as well as contain at least one uppercase, one lowercase, and one number."; 
+    passText.innerHTML = "<span>* Your password must be at least 6 characters as well as contain at least one uppercase, one lowercase, and one number.";
+    document.getElementById("btn-submit").disabled = true;
   }
 });

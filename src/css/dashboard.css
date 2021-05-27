@@ -106,12 +106,13 @@
     }
 }
 .styled-table {
-    margin-left: 50px;
+    position: relative;
+    width: 95%;
+    margin: 0 auto;
     border-collapse: collapse;
     margin-top: 25px;
     font-size: 0.9em;
     font-family: sans-serif;
-    min-width: 600px;
     border-radius: 10px 10px 0 0;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
@@ -151,21 +152,6 @@
     color: white;
     background-color: #ff3939;
 }
-/* button {
-    appearance: auto;
-    text-rendering: auto;
-    letter-spacing: normal;
-    word-spacing: normal;
-    text-transform: none;
-    text-indent: 0px;
-    text-shadow: none;
-    display: inline-block;
-    text-align: center;
-    align-items: flex-start;
-    border-width: 2px;
-    border-style: outset;
-    border-image: initial;
-} */
 
 button {
     border: none;
@@ -177,4 +163,33 @@ button {
     font-size: 14px;
     margin: 4px 2px;
     cursor: pointer;
+}
+
+@media (max-width: 1320px) {
+    .styled-table {
+        margin: 0 auto;
+        margin-top: 15px;
+    }
+    .styled-table thead {
+        display: none;
+    }
+    .styled-table, .styled-table tbody, .styled-table tr, .styled-table td {
+        display: block;
+        width: 80vw;
+    }
+    .styled-table td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+    .styled-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-size: 15px;
+        font-weight: bold;
+        text-align: left;
+    }
 }
