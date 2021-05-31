@@ -6,20 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EduMaterial | Donate</title>
     <link rel="stylesheet" type="text/css" href="/src/css/header.css">
-    <link rel="stylesheet" type="text/css" href="/src/css/donate.css">
+    <link rel="stylesheet" type="text/css" href="\src\css\donate.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
     
     <nav id="header">
-        <a href="/index.html" class="logo">EduMaterial</a>
+        <a href="/index.php" class="logo">EduMaterial</a>
         <div class="toggle"></div>
         <ul class="navigation">
-            <li><a href="/index.html">Home</a></li>
+            <li><a href="/index.php">Home</a></li>
             <li><a class="active" href="#">Donate</a></li>
-            <li><a href="/page/material/math.html">Material</a></li>
-            <li><a href="/page/about-us/about_us.html">About Us</a></li>
+            <li><a href="/page/material/math.php">Material</a></li>
+            <li><a href="/page/about-us/about_us.php">About Us</a></li>
             <li><a id="log" href="#"><i class="fas fa-user"></i></a>
                 <ul>
-                    <li><a href="/page/login/login.html">Logout</a></li>
+                    <li><a href="/page/login/login.php">Logout</a></li>
                 </ul>
             </li>
         </ul>

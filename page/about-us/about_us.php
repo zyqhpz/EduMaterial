@@ -11,7 +11,7 @@
     <!-- Template CSS Files-->
     <link rel="stylesheet" type= "text/css" href="/src/css/header.css">
     <link rel="stylesheet" type="text/css" href="/src/css/about_us.css">
-    <link rel="stylesheet" type="text/css" href="/src/css/footer.css">
+    <!-- <link rel="stylesheet" type="text/css" href="/src/css/footer.css"> -->
      
     <!-- Vendor CSS Files-->
     <link href="/assets/icofont/icofont.min.css" rel="stylesheet">
@@ -26,15 +26,15 @@
 <body>
     <!-- ======= General Section ======= -->
     <header id="header">
-        <a href="/index.html" class="logo">EduMaterial</a>
+        <a href="/index.php" class="logo">EduMaterial</a>
         <!-- <a href="/index.html" class="logo"><img src="/src/image/menu/logo.svg">EduMaterial</a> -->
         <div class="toggle"></div>
         <ul class="navigation">
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="/page/donate/donate.html">Donate</a></li>
-            <li><a href="/page/material/math.html">Material</a></li>
-            <li><a href="#"class="active">About Us</a></li>
-            <li><a href="/page/login/login.html">Login</a></li>
+            <li><a href="/index.php">Home</a></li>
+            <li><a href="/page/donate/donate.php">Donate</a></li>
+            <li><a href="/page/material/math.php">Material</a></li>
+            <li><a href="/page/about-us/about_us.php" class="active">About Us</a></li>
+            <li><a href="/page/login/login.php">Login</a></li>
         </ul>
     </header>
     <section>

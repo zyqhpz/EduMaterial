@@ -14,14 +14,14 @@
     <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
 
     <nav id="header">
-        <a href="index.html" class="logo">EduMaterial</a>
+        <a href="index.php" class="logo">EduMaterial</a>
         <div class="toggle"></div>
         <ul class="navigation">
             <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="page/donate/donate.html">Donate</a></li>
-            <li><a href="page/material/math.html">Material</a></li>
-            <li><a href="page/about-us/about_us.html">About Us</a></li>
-            <li><a href="page/login/login.html">Login</a></li>
+            <li><a href="page/donate/donate.php">Donate</a></li>
+            <li><a href="page/material/math.php">Material</a></li>
+            <li><a href="page/about-us/about_us.php">About Us</a></li>
+            <li><a href="page/login/login.php">Login</a></li>
         </ul>
     </nav>
 </head>
@@ -39,7 +39,7 @@
         <h2>What Is Sustainable Development Goals?</h2>
         <p>
             In September 2015, the General Assembly adopted the 2030 Agenda for Sustainable
-            <span><img id="sdgGoals" style="width: 100%; max-width: 700px; float: right; padding: 10px 10px;" src="/src/image/home/all_goals.jpg" alt="SDG Goals"></span>
+            <span><img id="sdgGoals" style="width: 100%; max-width: 700px; float: right; padding: 10px 10px;" src="src\image\home\all_goals.jpg" alt="SDG Goals"></span>
             Development that includes 17 Sustainable Development Goals (SDGs).
             Building on the principle of "leaving no one behind", the new Agenda emphasizes a holistic approach to achieving sustainable development for all.
             The Sustainable Development Goals are the blueprint to achieve a better and more sustainable future for all. They address the global challenges we face, including poverty, inequality, climate change, environmental degradation, peace and justice. Learn more <a href="https://www.un.org/sustainabledevelopment/sustainable-development-goals/" target="_blank" style="text-decoration: underline; color: white;">here.</a>
@@ -54,7 +54,7 @@
                 Over the past decade, major progress has been made towards increasing access to education and school enrollment rates at all levels, particularly for girls. Nevertheless, about 258 million children and youth were still out of school in 2018 — nearly one fifth of the global population in that age group.
                 As the COVID-19 pandemic spread across the globe, countries announced the temporary closure of schools, impacting more than 91 per cent of students worldwide. By April 2020, close to 1.6 billion children and youth were out of school.
             <br> <br>
-            <span><img id="goal4" style="width: 100%; max-width: 300px; float: left; padding: 10px 10px;" src="/src/image/home/goal4.gif" alt="SDG Goals"></span>
+            <span><img id="goal4" style="width: 100%; max-width: 300px; float: left; padding: 10px 10px;" src="src\image\home\goal4.gif" alt="SDG Goals"></span>
             <strong id="quest_text">
                 Where are people struggling the most to have access to education?
             </strong> <br>

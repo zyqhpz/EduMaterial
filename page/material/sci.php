@@ -11,14 +11,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 
     <nav id="header">
-        <a href="/index.html" class="logo">EduMaterial</a>
+        <a href="/index.php" class="logo">EduMaterial</a>
         <div class="toggle"></div>
         <ul class="navigation">
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="/page/donate/donate.html">Donate</a></li>
-            <li><a href="sci.html" class="active">Material</a></li>
-            <li><a href="/page/about-us/about_us.html">About Us</a></li>
-            <li><a href="/page/login/login.html">Login</a></li>
+            <li><a href="/index.php">Home</a></li>
+            <li><a href="/page/donate/donate.php">Donate</a></li>
+            <li><a href="math.php" class="active">Material</a></li>
+            <li><a href="/page/about-us/about_us.php">About Us</a></li>
+            <li><a href="/page/login/login.php">Login</a></li>
         </ul>
     </nav>
 </head>
@@ -26,31 +26,31 @@
     <div class="sidebar">
         <h1 id="title">Subjects</h1>
         <ul id="subject-list"> 
-            <li>
-                <a href="math.html">
+            <li class="active">
+                <a href="math.php">
                     <i class="fas fa-calculator"></i>
                     <span class="link-text">Mathematics</span>
                 </a>
             </li>
-            <li>
-                <a href="sci.html">
+            <li class="active">
+                <a href="sci.php">
                     <i class="fas fa-flask"></i>
                     <span class="link-text">Science</span>
                 </a>
             <li>
-                <a href="cs.html">
+                <a href="cs.php">
                     <i class="fas fa-laptop-code"></i>
                     <span class="link-text">Computer Science</span>
                 </a>
             </li>
-            <li class="active" >
-                <a href="#">
+            <li>
+                <a href="phi.php">
                     <i class="fas fa-book"></i>
                     <span class="link-text">Philosophy</span>
                 </a>
             </li>
             <li>
-                <a href="art.html">
+                <a href="art.php">
                     <i class="fas fa-paint-brush"></i>
                     <span class="link-text">Art</span>
                 </a>
@@ -58,22 +58,22 @@
         </ul>
     </div>
     <div class="main">
-        <h2>Philosophy</h2>
+        <h2>Science</h2>
         <div class="topic-list">
             <div id="video">
                 <ul>
                     <h3>Videos</h3>
-                    <li><a href="https://www.youtube.com/watch?v=kBdfcR-8hEY&list=PL72C62342291D5DAE" target="_blank">Philosophy Lecture: Justice</a> by Mr. A</li>
-                    <li><a href="https://www.youtube.com/watch?v=BNYJQaZUDrI&list=PL8dPuuaLjXtNgK6MZucdYldNkMybYIHKR" target="_blank">Philosophy Crash Course</a> by Mrs. B</li>
-                    <li><a href="https://www.youtube.com/watch?v=_tCl66AbkqI" target="_blank">Philosophy for Beginners</a> by Ms. C</li>
+                    <li><a href="https://www.youtube.com/watch?v=1C8CFSMvL20&list=PLezrE0Ume1TpVEGkTk8w7phwCqOwiW_PJ" target="_blank">Microbiology</a> by Mr. A</li>
+                    <li><a href="https://www.youtube.com/watch?v=qPix_X-9t7E&list=PLOA0aRJ90NxuIgOC9YGRUT4Y-CsP12bsS" target="_blank">Neuroscience</a> by Mrs. B</li>
+                    <li><a href="https://www.youtube.com/watch?v=OoO5d5P0Jn4&list=PL8dPuuaLjXtN0ge7yDk_UA0ldZJdhwkoV" target="_blank">Physics Crash Course</a> by Ms. C</li>
+                    <li><a href="https://www.youtube.com/watch?v=bSMx0NS0XfY&list=PL8dPuuaLjXtONguuhLdVmq0HTKS0jksS4" target="_blank">Organic Chemistry</a> by Ms. D</li>
                 </ul>
             </div>
             <div id="book">
                 <ul>
                     <h3>E-Book</h3>
-                    <li><a href="https://openlibrary-repo.ecampusontario.ca/jspui/bitstream/123456789/475/2/Intro-to-Phil-full-text.pdf" target="_blank">An Introduction to Philosophy</a> by Mr. A</li>
-                    <li><a href="http://www.mesacc.edu/~barsp59601/text/101/notes/textbook.pdf" target="_blank">Philosophy 101: Introduction to Western Philosophy</a> by Mrs. B</li>
-                    <li><a href="https://global.oup.com/us/companion.websites/9780199812998/studentresources/pdf/perry_glossary.pdf" target="_blank">Glossary of Philosophical Terms</a> by Ms. C</li>
+                    <li><a href="http://www.grsmu.by/files/file/university/cafedry/microbiologii-virysologii-immynologii/files/essential_microbiology.pdf" target="_blank">Essential Microbiology</a> by Mr. A</li>
+                    <li><a href="https://authors.library.caltech.edu/25032/1/Organic_Chemistry.pdf" target="_blank">Organic Chemistry</a> by Mrs. B</li>
                 </ul>
             </div>
         </div>

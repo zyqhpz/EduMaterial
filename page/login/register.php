@@ -25,7 +25,7 @@
     <body>
         <!----start header---->
         <div class="header-wrapper">
-            <a id="home" href="/index.html">
+            <a id="home" href="/index.php">
                 <i class="fas fa-home"></i>
             </a>
             <h1><strong>Register Page</strong></h1>
@@ -69,7 +69,7 @@
 
                 <div class="login-bottom">
                     <h4>Already have an Account?</a></h4>
-                    <div class="reg-bwn"><a href="login.html">Login Now!</a></div>
+                    <div class="reg-bwn"><a href="login.php">Login Now!</a></div>
                 </div>
             </form>
                 </div>
