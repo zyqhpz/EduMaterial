@@ -20,12 +20,12 @@
         <!-- Google Fonts-->
          <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500' rel='stylesheet' type='text/css'>
         <!-- Custom css -->
-        <link href="/src/css/login.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../../src/css/login.css" rel="stylesheet" type="text/css" media="all" />
     </head>
     <body>
         <!----start header---->
         <div class="header-wrapper">
-            <a id="home" href="/index.php">
+            <a id="home" href="../../index.php">
                 <i class="fas fa-home"></i>
             </a>
             <h1><strong>Register Page</strong></h1>

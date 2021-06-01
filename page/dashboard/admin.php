@@ -5,19 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EduMaterial | Admin</title>
-    <link rel="stylesheet" type="text/css" href="/src/css/header.css">
-    <link rel="stylesheet" type="text/css" href="/src/css/dashboard.css">
+    <link rel="stylesheet" type="text/css" href="../../src/css/header.css">
+    <link rel="stylesheet" type="text/css" href="../../src/css/dashboard.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
     
     <nav id="header">
-        <a href="/index.php" class="logo">EduMaterial</a>
+        <a href="../../index.php" class="logo">EduMaterial</a>
         <div class="toggle"></div>
         <ul class="navigation">
-            <li><a href="/index.php">Home</a></li>
-            <li><a href="/page/donate/donate.php">Donate</a></li>
-            <li><a href="/page/material/math.php">Material</a></li>
-            <li><a class="active" href="/page/about-us/about_us.php">About Us</a></li>
-            <li><a id="log" href="#"><i class="fas fa-user"></i></a>
+            <li><a href="../../index.php">Home</a></li>
+            <li><a href="../../page/donate/donate.php">Donate</a></li>
+            <li><a href="../../page/material/math.php">Material</a></li>
+            <li><a href="../../page/about-us/about_us.php">About Us</a></li>
+            <li><a class="active" id="log" href="#"><i class="fas fa-user"></i></a>
                 <ul>
                     <li><a href="/page/login/login.php">Logout</a></li>
                 </ul>
@@ -91,6 +92,6 @@
             </tbody>
         </table>
     </div>
-    <script src="/src/js/header.js"></script>
+    <script src="../../src/js/header.js"></script>
 </body>
 </html>

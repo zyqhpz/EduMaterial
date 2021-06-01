@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EduMaterial</title>
 
-    <link rel="icon" href="/src/image/menu/logo.svg">
+    <link rel="icon" href="../../src/image/menu/logo.svg">
 
     <!-- Template CSS Files-->
-    <link rel="stylesheet" type= "text/css" href="/src/css/header.css">
-    <link rel="stylesheet" type="text/css" href="/src/css/about_us.css">
+    <link rel="stylesheet" type= "text/css" href="../../src/css/header.css">
+    <link rel="stylesheet" type="text/css" href="../../src/css/about_us.css">
     <!-- <link rel="stylesheet" type="text/css" href="/src/css/footer.css"> -->
      
     <!-- Vendor CSS Files-->
-    <link href="/assets/icofont/icofont.min.css" rel="stylesheet">
+    <link href="../../assets/icofont/icofont.min.css" rel="stylesheet">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -30,21 +30,21 @@
         <!-- <a href="/index.html" class="logo"><img src="/src/image/menu/logo.svg">EduMaterial</a> -->
         <div class="toggle"></div>
         <ul class="navigation">
-            <li><a href="/index.php">Home</a></li>
-            <li><a href="/page/donate/donate.php">Donate</a></li>
-            <li><a href="/page/material/math.php">Material</a></li>
-            <li><a href="/page/about-us/about_us.php" class="active">About Us</a></li>
-            <li><a href="/page/login/login.php">Login</a></li>
+            <li><a href="../../index.php">Home</a></li>
+            <li><a href="../donate/donate.php">Donate</a></li>
+            <li><a href="../material/math.php">Material</a></li>
+            <li><a href="../about-us/about_us.php" class="active">About Us</a></li>
+            <li><a href="../login/login.php">Login</a></li>
         </ul>
     </header>
     <section>
         <h2 id="home_text">About Us</h2>
         <h2 id="sub_text">Are we from Pluto?</h2>
-        <img src="/src/image/home/stars.png" id="star">
-        <img src="/src/image/home/stars2.png" id="star2">
-        <img src="/src/image/home/rock.png" id="rock">
-        <img src="/src/image/home/kucing.svg" id="cat">
-        <img src="/src/image/home/night_back.svg" id="night">
+        <img src="../../src/image/home/stars.png" id="star">
+        <img src="../../src/image/home/stars2.png" id="star2">
+        <img src="../../src/image/home/rock.png" id="rock">
+        <img src="../../src/image/home/kucing.svg" id="cat">
+        <img src="../../src/image/home/night_back.svg" id="night">
     </section>
 
     <script>
@@ -76,7 +76,7 @@
           <div class="text-center">
             <h1>Hello</h1>
             <p> We know how it is hard to find the right reference materials during your studies. Especially to those who do not have any contacts to any seniors, or those who are not in elite cluster to just buy them.  We have brainstormed between our members to contribute to the community a brilliant system which focusing on education field. Kind-hearted people who love to donate are most welcomed here as this the latest educational materials donation platform. Do not throw it away! Help others by donating your precious education materials here!</p>
-            <a class="desc-btn" href="/page/donate/donate.html">Donate Now</a>
+            <a class="desc-btn" href="../donate/donate.php">Donate Now</a>
         </div>
 
         </div>
@@ -90,7 +90,7 @@
      <div class="container">
          <div class="card">
              <div class="content">
-                 <div class="imgBx"><img src="\src\image\team\zyqq.jpg"></div>
+                 <div class="imgBx"><img src="../..\src\image\team\zyqq.jpg"></div>
                  <div class="content8x">
                      <h3>Someone Hardworking<br><span>Creative Designer</span></h3>
                     </div>
@@ -104,7 +104,7 @@
             
             <div class="card">
                 <div class="content">
-                    <div class="imgBx"><img src="\src\image\team\farah.jpg"></div>
+                    <div class="imgBx"><img src="../..\src\image\team\farah.jpg"></div>
                     <div class="content8x">
                         <h3>Someone Workaholic<br><span>Marketing Executive</span></h3>
                     </div>
@@ -118,7 +118,7 @@
             
             <div class="card">
                 <div class="content">
-                    <div class="imgBx"><img src="\src\image\team\abdullah.jpg"></div>
+                    <div class="imgBx"><img src="../..\src\image\team\abdullah.jpg"></div>
                     <div class="content8x">
                         <h3>Someone Smart<br><span>Software Developer</span></h3>
                     </div>
@@ -133,7 +133,7 @@
             <div class="container">
                 <div class="card">
                     <div class="content">
-                        <div class="imgBx"><img src="\src\image\team\haziq.jpg"></div>
+                        <div class="imgBx"><img src="../..\src\image\team\haziq.jpg"></div>
                         <div class="content8x">
                             <h3>Someone Flexible<br><span>Stakeholders</span></h3>
                            </div>
@@ -227,8 +227,8 @@
     <a href="#" class="back-to-top"><img src="/src/image/icon/arrow-up-line.png"></a>
     
     <!-- Template JavaScript Files-->
-    <script src="/src/js/header.js"></script>
-    <script src="/src/js/validate.js"></script>
+    <script src="../../src/js/header.js"></script>
+    <script src="../../src/js/validate.js"></script>
 
 </body>
 </html>

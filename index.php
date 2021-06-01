@@ -17,7 +17,7 @@
         <a href="index.php" class="logo">EduMaterial</a>
         <div class="toggle"></div>
         <ul class="navigation">
-            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="index.php" class="active">Home</a></li>
             <li><a href="page/donate/donate.php">Donate</a></li>
             <li><a href="page/material/math.php">Material</a></li>
             <li><a href="page/about-us/about_us.php">About Us</a></li>
@@ -100,10 +100,10 @@
         <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
         <script src="https://unpkg.com/rivescript@latest/dist/rivescript.min.js"></script>
-        <script src="/src/js/chat_bot.js"></script>
+        <script src="src/js/chat_bot.js"></script>
         <script>
             function setup() {
-                chatbot.loadFiles(['/src/bot/bot_reply.rive']);
+                chatbot.loadFiles(['src/bot/bot_reply.rive']);
             }
             window.onload = setup;
         </script>
@@ -152,7 +152,7 @@
         modal.style.display = "none";
         }
     </script>
-    <script src="/src/js/header.js"></script>
+    <script src="src/js/header.js"></script>
 </body>
 <footer style="text-align: center; font-size: large;margin: 10px 0; font-weight: 500; color: #fff;">EduMaterial &#169; 2021</footer>
 </html>
