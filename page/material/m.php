@@ -81,53 +81,74 @@
             <div id="video">
                 <ul>
                 <h3>Video</h3>
-            <?php
+                <?php
+                $conn = mysqli_connect("localhost", "root", "", "webapp");
 
-            $conn = mysqli_connect("localhost", "root", "", "webapp");
+                if ($conn->connect_error) {
+                    die("Connection failed: " . $conn->connect_error);
+                    }
+                // $sql = "SELECT * FROM material, user";
 
-            if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
-                }
-            $sql = "SELECT * FROM material, user";
+                $sql = "SELECT * FROM material INNER JOIN user ON material.user_id = user.user_id";
 
-            $result = $conn->query($sql);
+                $result = $conn->query($sql);
 
-            if ($result->num_rows > 0) {
-                // output data of each row
-                // echo "<div class=" . "topic-list" . ">" .
-                //             "<div id=" .$type. ">" .
-                //                 "<ul>" .
-                //                     "<h3>" . ucfirst($type) ."</h3>" .
-                //                     "<li>"; orii
+                if ($result->num_rows > 0) {
+                    while ($row = mysqli_fetch_array($result)) {
+                        $link = $row["material_file"];
+                        $type = $row["material_type"];
+                        $title = $row["material_name"];
+                        $category = $row["category_id"];
+                        $donator = ucfirst($row["user_firstname"]) . " " . ucfirst($row["user_lastname"]);
+                        
+                        if ($type == "video" and $category == 1) {         
+                        echo "<li>
+                                <a target=_blank href=" . $link. ">$title</a>" . " by ". $donator ." <br> &emsp; <strong> Description </strong> : " . $row["material_description"] .
+                            "</li>";
+                        }  
+                    }
+                } else { echo "0 results"; }
+                // $conn->close();
+                ?>
+                </ul>
+            </div>
+            <div id="book">
+                <ul>
+                <h3>E-Book</h3>
+                <?php
 
-                // echo "<div class=" . "topic-list" . ">" .
-                //             "<div id=" . "video" . ">" .
-                //                 "<ul>" .
-                //                     "<h3>" . "Video" ."</h3>";
-                                    // "<li>";
-                while($row = $result->fetch_assoc()) {
-                $link = $row["material_file"];
-                $type = $row["material_type"];
-                $title = $row["material_name"];
-                $category = $row["category_id"];
-                $donator = ucfirst($row["user_firstname"]) . " " . ucfirst($row["user_lastname"]);
-                
-                    if ($type == "video" and $category == 1 and $row["user_firstname"] == "Jake") {
-                            
-                    echo " <li>
-                    <a target=_blank href=" . $link. ">$title</a>" . " by ". $donator ." <br> &emsp; <strong> Description </strong> : " . $row["material_description"] .
-                    "</li>";
-                }
-                    
-                }
-                echo "
-                                        </ul>
-                                    </div>
-                                </div>";
-            } else { echo "0 results"; }
-            $conn->close();
-            ?>
+                $conn = mysqli_connect("localhost", "root", "", "webapp");
+
+                if ($conn->connect_error) {
+                    die("Connection failed: " . $conn->connect_error);
+                    }
+                // $sql = "SELECT * FROM material, user";
+
+                // $sql = "SELECT * FROM material INNER JOIN user ON material.user_id = user.user_id";
+
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+                    while ($row = mysqli_fetch_array($result)) {
+                        $link = $row["material_file"];
+                        $type = $row["material_type"];
+                        $title = $row["material_name"];
+                        $category = $row["category_id"];
+                        $donator = ucfirst($row["user_firstname"]) . " " . ucfirst($row["user_lastname"]);
+                        
+                        if ($type == "ebook" and $category == 1) {         
+                        echo "<li>
+                                <a target=_blank href=" . $link. ">$title</a>" . " by ". $donator ." <br> &emsp; <strong> Description </strong> : " . $row["material_description"] .
+                            "</li>";
+                        }  
+                    }
+                } else { echo "0 results"; }
+                // $conn->close();
+                ?>
+                </ul>
+            </div>
+        </div>
     </div>
-    <script src="/src/js/header.js"></script>
+    <script src="../../src/js/header.js"></script>
 </body>
 </html>
