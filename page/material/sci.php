@@ -59,7 +59,7 @@
     </div>
     <div class="main">
         <h2>Science</h2>
-        <div class="topic-list">
+        <!-- <div class="topic-list">
             <div id="video">
                 <ul>
                     <h3>Videos</h3>
@@ -76,7 +76,7 @@
                     <li><a href="https://authors.library.caltech.edu/25032/1/Organic_Chemistry.pdf" target="_blank">Organic Chemistry</a> by Mrs. B</li>
                 </ul>
             </div>
-        </div>
+        </div> -->
         <div class=topic-list>
             <div id="video">
                 <ul>

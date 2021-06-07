@@ -32,7 +32,7 @@
         <h1>Donate Form</h1>
         <div class="container">
             <!-- <form action="action_page.php"> -->
-            <form action="#">
+            <form action="#" method="POST">
           
               <label for="mat-name">Material Name</label>
               <input type="text" placeholder="Put your material name here..">
@@ -55,15 +55,15 @@
                 <option value="ebook">E-Book</option>
               </select>
           
-              <label for="mat-file">Upload Material</label>
-              <input type="file" id="mat-file" name="filename">
+              <label for="mat-file">Material File</label>
+              <input type="text" placeholder="Put the material link here..">
               <br>
 
               <input type="submit" value="Submit">
           
             </form>
-          </div> 
+          </div>
     </div>
-    <script src="/src/js/header.js"></script>
+    <script src="../../src/js/header.js"></script>
 </body>
 </html>

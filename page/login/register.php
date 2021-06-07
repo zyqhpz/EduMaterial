@@ -93,6 +93,6 @@
         </div>
   
         <script src="lib/jquery-1.8.1.min.js"></script>
-        <script src="/src/js/login.js"></script>
+        <script src="../../src/js/login.js"></script>
     </body>
 </html>

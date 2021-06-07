@@ -59,7 +59,7 @@
     </div>
     <div class="main">
         <h2>Philosophy</h2>
-        <div class="topic-list">
+        <!-- <div class="topic-list">
             <div id="video">
                 <ul>
                     <h3>Videos</h3>
@@ -76,7 +76,7 @@
                     <li><a href="https://global.oup.com/us/companion.websites/9780199812998/studentresources/pdf/perry_glossary.pdf" target="_blank">Glossary of Philosophical Terms</a> by Ms. C</li>
                 </ul>
             </div>
-        </div>
+        </div> -->
         <div class=topic-list>
             <div id="video">
                 <ul>

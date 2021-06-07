@@ -92,7 +92,7 @@
              <div class="content">
                  <div class="imgBx"><img src="../..\src\image\team\zyqq.jpg"></div>
                  <div class="content8x">
-                     <h3>Someone Hardworking<br><span>Creative Designer</span></h3>
+                     <h3>Haziq Hapiz<br><span>Creative Designer</span></h3>
                     </div>
                 </div>
                 <ul class="sci">
@@ -106,7 +106,7 @@
                 <div class="content">
                     <div class="imgBx"><img src="../..\src\image\team\farah.jpg"></div>
                     <div class="content8x">
-                        <h3>Someone Workaholic<br><span>Marketing Executive</span></h3>
+                        <h3>Farah Nabila<br><span>Marketing Executive</span></h3>
                     </div>
                 </div>
                 <ul class="sci">

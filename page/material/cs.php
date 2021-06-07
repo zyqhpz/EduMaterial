@@ -59,7 +59,7 @@
     </div>
     <div class="main">
         <h2>Computer Science</h2>
-        <div class="topic-list">
+        <!-- <div class="topic-list">
             <div id="video">
                 <ul>
                     <h3>Videos</h3>
@@ -76,7 +76,7 @@
                     <li><a href="https://eloquentjavascript.net/Eloquent_JavaScript.pdf" target="_blank">Javascript 3rd Edition</a> by Ms. C</li>
                 </ul>
             </div>
-        </div>
+        </div> -->
         <div class=topic-list>
             <div id="video">
                 <ul>

@@ -100,7 +100,7 @@
         <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
         <script src="https://unpkg.com/rivescript@latest/dist/rivescript.min.js"></script>
-        <script src="src/js/chat_bot.js"></script>
+        <!-- <script src="src/js/chat_bot.js"></script> -->
         <script>
             function setup() {
                 chatbot.loadFiles(['src/bot/bot_reply.rive']);
@@ -153,6 +153,7 @@
         }
     </script>
     <script src="src/js/header.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/idewcomputing/code-chatbot/src/chatbot.js"></script>
 </body>
 <footer style="text-align: center; font-size: large;margin: 10px 0; font-weight: 500; color: #fff;">EduMaterial &#169; 2021</footer>
 </html>
