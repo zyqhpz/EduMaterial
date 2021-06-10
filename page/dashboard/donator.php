@@ -18,8 +18,8 @@
             <li><a href="../../index.php">Home</a></li>
             <li><a href="../../page/donate/donate.php">Donate</a></li>
             <li><a href="../../page/material/math.php">Material</a></li>
-            <li><a class="active" href="../../page/about-us/about_us.php">About Us</a></li>
-            <li><a id="log" href="#"><i class="fas fa-user"></i></a>
+            <li><a href="../../page/about-us/about_us.php">About Us</a></li>
+            <li><a class="active" id="log" href="#"><i class="fas fa-user"></i></a>
                 <ul>
                     <li><a href="../../page/login/login.php">Logout</a></li>
                 </ul>
@@ -65,63 +65,71 @@
             </thead>
             <tbody>
             <?php
-                while ($row = $result->fetch_assoc()): ?>
+                while ($row = $result->fetch_assoc()): 
+                    if ($row['user_id'] == 102) {
+                ?>
                 <tr>
                     <td data-label="Material Name"><?php echo $row['material_name']?></td>
                     <td><?php echo $row['category_name']?> </td>
                     <td data-label="Type"><?php echo ucfirst($row['material_type'])?></td>
                     <td data-label="Edit">
-                        <a href="donator.php?edit=<?php echo $row['material_id']; ?>">
-                            <button onclick="hideForm()" type="button" class="edit-btn">
+                        <a href="donator.php?editM=<?php echo $row['material_id']; ?>">
+                            <button id="myBtn" type="button" class="edit-btn">
                                 <i class="fas fa-edit"></i>
                             </button>
                         </a>
-                        <a href="process.php?delete=<?php echo $row['material_id']; ?>">
+                        <a href="process.php?deleteM=<?php echo $row['material_id']; ?>">
                         <button type="button" class="delete-btn">
                             <i class="fas fa-trash"></i>
                         </button>
                         </a>
                     </td>
                 </tr>
-                <?php endwhile; ?>
+                <?php
+                    }
+                 endwhile; ?>
             </tbody>
         </table>
-        <button onclick="hideForm()">click</button>
-        <div class="container" id="edit_form">
-            <form action="process.php" method="POST">
-                <input type="hidden" name="id" value="<?php echo $id; ?>">
-                <label for="mat-name">Material Name</label>
-                <input type="text" name="name" value="<?php echo $name; ?>" placeholder="Put your material name here..">
+        <!-- <button onclick="hideForm()">click</button> -->
+        <div id="myModal" class="modal">
+            <div class="modal-content" id="edit_form">
+            <span class="close">&times;</span>
+                <form action="process.php" method="POST">
+                    <input type="hidden" name="id" value="<?php echo $id; ?>">
+                    <label for="mat-name">Material Name</label>
+                    <input type="text" name="name" value="<?php echo $name; ?>" placeholder="Put your material name here..">
 
-                <label for="desc">Material Description</label>
-                <input name="desc" type="text" id="desc" name="desc" value="<?php echo $desc; ?>" placeholder="Write description.." style="height:100px"></input>
+                    <label for="desc">Material Description</label>
+                    <input name="desc" type="text" id="desc" name="desc" value="<?php echo $desc; ?>" placeholder="Write description.." style="height:100px"></input>
+                    
+                    <label for="category">Category</label>
+                    <select id="category" name="category">
+                        <option value="none" selected disabled hidden>Select material category</option>
+                        <option <?php if ($category == 1) echo "selected"; ?> value="1">Mathematics</option>
+                        <option <?php if ($category == 2) echo "selected"; ?> value="2">Science</option>
+                        <option <?php if ($category == 3) echo "selected"; ?> value="3">Computer Science</option>
+                        <option <?php if ($category == 4) echo "selected"; ?> value="4">Philosophy</option>
+                        <option <?php if ($category == 5) echo "selected"; ?> value="5">Art</option>
+                    </select>
+                    
+                    <label for="mat-type">Material Type</label>
+                    <select id="mat-type" name="type">
+                        <option value="none" selected disabled hidden>Select material type</option>
+                        <option <?php if ($type == 'video') echo "selected"; ?> value="video">Video</option>
+                        <option <?php if ($type == 'ebook') echo "selected"; ?> value="ebook">E-Book</option>
+                    </select>
                 
-                <label for="category">Category</label>
-                <select id="category" name="category">
-                    <option value="none" selected disabled hidden>Select material category</option>
-                    <option <?php if ($category == 1) echo "selected"; ?> value="1">Mathematics</option>
-                    <option <?php if ($category == 2) echo "selected"; ?> value="2">Science</option>
-                    <option <?php if ($category == 3) echo "selected"; ?> value="3">Computer Science</option>
-                    <option <?php if ($category == 4) echo "selected"; ?> value="4">Philosophy</option>
-                    <option <?php if ($category == 5) echo "selected"; ?> value="5">Art</option>
-                </select>
-                
-                <label for="mat-type">Material Type</label>
-                <select id="mat-type" name="type">
-                    <option value="none" selected disabled hidden>Select material type</option>
-                    <option <?php if ($type == 'video') echo "selected"; ?> value="video">Video</option>
-                    <option <?php if ($type == 'ebook') echo "selected"; ?> value="ebook">E-Book</option>
-                </select>
+                    <label for="mat-file">Material File</label>
+                    <input name="file" type="text" value="<?php echo $file; ?>" placeholder="Put the material link here..">
+                    <br>
+
+                    <input type="submit" value="Update" name="update">
             
-                <label for="mat-file">Material File</label>
-                <input name="file" type="text" value="<?php echo $file; ?>" placeholder="Put the material link here..">
-                <br>
-
-                <input type="submit" value="Update" name="update">
-          
-            </form>
-          </div>
+                </form>
+            </div>
+        </div>
     </div>
+</body>
     <script>
        function hideForm() {
             var  x = document.getElementById("edit_form");
@@ -130,7 +138,40 @@
             else
                 x.style.display = "none";
         }
+
+                // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+        var mB = document.querySelector('.edit-btn');
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+    //     btn.onclick = function() {
+    //      // modal.style.display = "block";
+    //    modal.classList.add('show');
+    //     }
+
+    mB.addEventListener('click', () => {
+        // modal.classList.add('show');
+        modal.style.display = "block";
+    });
+
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+        modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        // window.onclick = function(event) {
+        // if (event.target == modal) {
+        //     modal.style.display = "none";
+        // }
+        // }
     </script>
-    <script src="/src/js/header.js"></script>
-</body>
+    <script src="../../src/js/header.js"></script>
 </html>
