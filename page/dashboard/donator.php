@@ -1,3 +1,6 @@
+<?php
+    include('edit-material.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../../src/css/dashboard.css">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
     <nav id="header">
         <a href="../../index.php" class="logo">EduMaterial</a>
@@ -47,6 +51,7 @@
         </ul>
     </div>
     <div class="main">
+        
         <h1>Donator Dashboard</h1>
         <h2>Material List</h2>
         <?php require_once 'process.php'; ?>
@@ -66,15 +71,19 @@
             <tbody>
             <?php
                 while ($row = $result->fetch_assoc()): 
-                    if ($row['user_id'] == 102) {
+                    if ($row['user_id'] == 101) {
                 ?>
                 <tr>
-                    <td data-label="Material Name"><?php echo $row['material_name']?></td>
-                    <td><?php echo $row['category_name']?> </td>
-                    <td data-label="Type"><?php echo ucfirst($row['material_type'])?></td>
+                    <tr id="<?php echo $row['material_id'];?>"></tr>
+                    <td data-target="fname" data-label="Material Name"><?php echo $row['material_name']?></td>
+                    <td data-label="Category"><?php echo $row['category_name']?></td>
+                    <td data-target="type" data-label="Type"><?php echo ucfirst($row['material_type'])?></td>
+                    <td data-target="file" style="display: none;"><?php echo $row['material_file']?></td>
+                    <td data-target="desc" style="display: none;"><?php echo $row['material_description']?></td>
                     <td data-label="Edit">
-                        <a href="donator.php?editM=<?php echo $row['material_id']; ?>">
-                            <button id="myBtn" type="button" class="edit-btn">
+                        <a href="#" class="modal-trigger" data-role="update" data-id="<?php echo $row['material_id'];?>">
+                        <!-- <a href="donator.php?editM=<?php echo $row['material_id'];?>"> -->
+                            <button id="myBtn" type="button" class="edit-btn"  >
                                 <i class="fas fa-edit"></i>
                             </button>
                         </a>
@@ -90,17 +99,26 @@
                  endwhile; ?>
             </tbody>
         </table>
-        <!-- <button onclick="hideForm()">click</button> -->
-        <div id="myModal" class="modal">
-            <div class="modal-content" id="edit_form">
-            <span class="close">&times;</span>
-                <form action="process.php" method="POST">
-                    <input type="hidden" name="id" value="<?php echo $id; ?>">
+        <!-- <script>
+            $(document).ready(function() {
+                $("button")
+            })
+        </script> -->
+
+        <div class="overlay modal-close"></div>
+        <div class="modal-container" id="edit-form">
+            <span class="close" ><a class="modal-close" href="#">&times;</a></span>
+            <div class="modal-title">Edit Material</div>
+            <br>
+            <div class="modal-body">
+                <form action="#" method="POST">
+                    
+                    <input type="hidden" name="id" id="matID" value="<?php echo $id; ?>">
                     <label for="mat-name">Material Name</label>
-                    <input type="text" name="name" value="<?php echo $name; ?>" placeholder="Put your material name here..">
+                    <input type="text" name="name" id="name" value="<?php echo $name; ?>" placeholder="Put your material name here..">
 
                     <label for="desc">Material Description</label>
-                    <input name="desc" type="text" id="desc" name="desc" value="<?php echo $desc; ?>" placeholder="Write description.." style="height:100px"></input>
+                    <input name="desc" type="text" id="desc" name="desc" value="<?php echo $desc; ?>" placeholder="Write description.." style="height:50px"></input>
                     
                     <label for="category">Category</label>
                     <select id="category" name="category">
@@ -112,66 +130,106 @@
                         <option <?php if ($category == 5) echo "selected"; ?> value="5">Art</option>
                     </select>
                     
-                    <label for="mat-type">Material Type</label>
-                    <select id="mat-type" name="type">
+                    <label for="type">Material Type</label>
+                    <select id="type" name="type">
                         <option value="none" selected disabled hidden>Select material type</option>
                         <option <?php if ($type == 'video') echo "selected"; ?> value="video">Video</option>
                         <option <?php if ($type == 'ebook') echo "selected"; ?> value="ebook">E-Book</option>
                     </select>
                 
-                    <label for="mat-file">Material File</label>
-                    <input name="file" type="text" value="<?php echo $file; ?>" placeholder="Put the material link here..">
-                    <br>
+                    <label for="file">Material File</label>
+                    <input id="file" name="file" type="text" value="<?php echo $file; ?>" placeholder="Put the material link here.."></input>
 
-                    <input type="submit" value="Update" name="update">
-            
+                    <div class="modal-footer">
+                        <input id="update" type="submit" value="Update" name="update">
+                    </div>
                 </form>
             </div>
         </div>
+
     </div>
-</body>
     <script>
-       function hideForm() {
-            var  x = document.getElementById("edit_form");
-            if (x.style.display === "none")
-                x.style.display = "block";
-            else
-                x.style.display = "none";
-        }
 
-                // Get the modal
-        var modal = document.getElementById("myModal");
+        $(document).ready(function() {
 
-        // Get the button that opens the modal
-        var btn = document.getElementById("myBtn");
-        var mB = document.querySelector('.edit-btn');
+            $(document).on('click', 'a[data-role=update]', function() {
+                var currentRow=$(this).closest("tr"); 
+                var id = $(this).data('id');
 
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
+               // var n = $('#' + id).children(td[data-target]);
+                var name = currentRow.find("td:eq(0)").text(); // get current row 1st TD value 
+                var cat = currentRow.find("td:eq(1)").text();
+                var type = currentRow.find("td:eq(2)").text().toLowerCase();
+                var file = currentRow.find("td:eq(3)").text();
+                var desc = currentRow.find("td:eq(4)").text();
 
-        // When the user clicks the button, open the modal 
-    //     btn.onclick = function() {
-    //      // modal.style.display = "block";
-    //    modal.classList.add('show');
-    //     }
+                switch (cat) {
+                case 'Mathematics':
+                    cat = 1;
+                    break;
+                case 'Science':
+                    cat = 2;
+                    break;
+                case 'Computer Science':
+                    cat = 3;
+                    break;
+                case 'Philosophy':
+                    cat = 4;
+                    break;
+                case 'Art':
+                    cat = 5;
+                    break;
+                default:
+                    cat = " ";
+                } 
+                $('#matID').val(id);
+                $('#name').val(name);
+                $('#desc').val(desc);
+                $('#type').val(type);
+                $('#file').val(file);
+                $('#category').val(cat);
+            });
+            
+            $('#update').click(function() {
+                var id = $('#matID').val();
+                var name = $('#name').val();
+                var desc = $('#desc').val();
+                var type = $('#type').val();
+                var file = $('#file').val();
+                var cat = $('#category').val();
 
-    mB.addEventListener('click', () => {
-        // modal.classList.add('show');
-        modal.style.display = "block";
-    });
+                switch (cat) {
+                case 'Mathematics':
+                    cat = 1;
+                    break;
+                case 'Science':
+                    cat = 2;
+                    break;
+                case 'Computer Science':
+                    cat = 3;
+                    break;
+                case 'Philosophy':
+                    cat = 4;
+                    break;
+                case 'Art':
+                    cat = 5;
+                    break;
+                default:
+                    cat = " ";
+                }
 
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-        modal.style.display = "none";
-        }
-
-        // When the user clicks anywhere outside of the modal, close it
-        // window.onclick = function(event) {
-        // if (event.target == modal) {
-        //     modal.style.display = "none";
-        // }
-        // }
+                $.ajax({
+                    url     : 'edit-material.php',
+                    method  : 'post',
+                    data    : {name: name, desc: desc, cat: cat, file: file, type: type, id: id},
+                    success : function(response) {
+                        console.log(response);
+                    }
+                })
+            });
+        });
     </script>
+    <script src="../../src/js/modal.js"></script>
     <script src="../../src/js/header.js"></script>
+</body>
 </html>

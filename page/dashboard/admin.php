@@ -1,3 +1,6 @@
+<?php
+    include('edit-donator.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../../src/css/dashboard.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
     <nav id="header">
         <a href="../../index.php" class="logo">EduMaterial</a>
@@ -43,53 +47,6 @@
     <div class="main">
         <h1>Admin Dashboard</h1>
         <h2>Donator Namelist</h2>
-        <!-- <table class="styled-table">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Edit</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td data-label="Name">Jake Jaxon</td>
-                    <td data-label="Email">jake.jaxon@gmail.com</td>
-                    <td data-label="Edit">
-                        <button type="button" class="edit-btn">
-                            <i class="fas fa-edit"></i>
-                        </button>
-                        <button type="button" class="delete-btn">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td data-label="Name">Melissa Mei</td>
-                    <td data-label="Email">mel.mei@gmail.com</td>
-                    <td data-label="Edit">
-                        <button type="button" class="edit-btn">
-                            <i class="fas fa-edit"></i>
-                        </button>
-                        <button type="button" class="delete-btn">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td data-label="Name">Dominic Toronto</td>
-                    <td data-label="Email">dom.t@gmail.com</td>
-                    <td data-label="Edit">
-                        <button type="button" class="edit-btn">
-                            <i class="fas fa-edit"></i>
-                        </button>
-                        <button type="button" class="delete-btn">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    </td>
-                </tr>
-            </tbody>
-        </table> -->
         <?php require_once 'process.php'; ?>
         <?php
             $mysqli = new mysqli('localhost', 'root', '', 'webapp') or die(mysqli_error($mysqli));
@@ -98,7 +55,6 @@
         <table class="styled-table">
             <thead>
                 <tr>
-                    <th>Donator ID</th>
                     <th>Name</th>
                     <th>Email</th>
                     <th>Role</th>
@@ -110,9 +66,10 @@
                 while ($row = $result->fetch_assoc()): 
                 ?>
                 <tr>
-                    <td data-label="UserID"><?php echo $row['user_id']?></td>
+                    <tr id="<?php echo $row['user_id'];?>"></tr>
                     <td data-label="Type"><?php echo ucfirst($row['user_firstname'] . " " . $row['user_lastname'])?></td>
-                    <td><?php echo $row['user_email']?> </td>
+                    <td data-label="Email"><?php echo $row['user_email']?> </td>
+                    <td style="display: none;"><?php echo $row['user_role']?></td>
                     <?php 
                         $id = $row['user_role'];
                         if ($id == 1)
@@ -120,9 +77,9 @@
                         else
                             $id = "Admin";    
                     ?>
-                    <td><?php echo $id; ?> </td>
-                    <td data-label="Edit">
-                        <a href="admin.php?editD=<?php echo $row['user_id']; ?>">
+                    <td data-label="Role"><?php echo $id; ?> </td>
+                    <td data-label="Action">
+                        <a class="modal-trigger" data-role="update" href="#" data-id="<?php echo $row['user_id']; ?>">
                             <button id="myBtn" type="button" class="edit-btn">
                                 <i class="fas fa-edit"></i>
                             </button>
@@ -138,56 +95,72 @@
                  endwhile; ?>
             </tbody>
         </table>
-        <div id="myModal" class="modal">
-            <div class="modal-content" id="edit_form">
-            <span class="close">&times;</span>
-                <form action="process.php" method="POST">
-                    <input type="hidden" name="idU" value="<?php echo $idU; ?>">
+        <div class="overlay modal-close"></div>
+        <div class="modal-container" id="edit-form">
+            <span class="close" ><a class="modal-close" href="#">&times;</a></span>
+            <div class="modal-title">Edit Donator</div>
+            <br>
+            <div class="modal-body">
+                <form action="#" method="POST">
+                    <input type="hidden" id="userID" name="id" value="<?php echo $id; ?>">
                     <label for="fname">First Name</label>
-                    <input type="text" name="fname" value="<?php echo $fname; ?>" placeholder="First Name">
+                    <input id="fname" type="text" name="fname" value="<?php echo $fname; ?>" placeholder="First Name">
                     <label for="lname">Last Name</label>
-                    <input type="text" name="lname" value="<?php echo $lname; ?>" placeholder="Last Name">
+                    <input type="text" id="lname" name="lname" value="<?php echo $lname; ?>" placeholder="Last Name">
                                      
-                    <label for="user-role">Role</label>
-                    <select id="user-role" name="role">
+                    <label for="role">Role</label>
+                    <select id="role" name="role">
                         <option value="none" selected disabled hidden>Select user role</option>
                         <option <?php if ($role == '1') echo "selected"; ?> value="1">Donator</option>
                         <option <?php if ($role == '0') echo "selected"; ?> value="0">Admin</option>
                     </select>
-
-                    <input type="submit" value="Update" name="updateD">
-            
+                    <div class="modal-footer">
+                        <input type="submit" value="Update" name="update">
+                    </div>
                 </form>
             </div>
         </div>
     </div>
-    <script src="../../src/js/header.js"></script>
     <script>
-                var modal = document.getElementById("myModal");
+        
+        $(document).ready(function() {
 
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-var mB = document.querySelector('.edit-btn');
+            $(document).on('click', 'a[data-role=update]', function() {
+                var currentRow=$(this).closest("tr");
+                var r = $(this).closest("tr");
+                var id = $(this).data('id');
+                
+                var name = currentRow.find("td:eq(0)").text().split(' ');
+                var email = currentRow.find("td:eq(1)").text();
+                var role = currentRow.find("td:eq(2)").text();
+                console.log(role);
+                var fname = name[0];
+                var lname = name[1];
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+                $('#userID').val(id);
+                $('#fname').val(fname);
+                $('#lname').val(lname);
+                $('#role').val(role);
+            });
+            $('#update').click(function() {
+                var id = $('#userID').val();
+                var fname = $('#fname').val();
+                var lname = $('#lname').val();
+                var role = $('#role').val();
 
-// When the user clicks the button, open the modal 
-//     btn.onclick = function() {
-//      // modal.style.display = "block";
-//    modal.classList.add('show');
-//     }
-
-mB.addEventListener('click', () => {
-// modal.classList.add('show');
-modal.style.display = "block";
-});
-
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-modal.style.display = "none";
-}
+                $.ajax({
+                    url     : 'edit-donator.php',
+                    method  : 'post',
+                    data    : {fname: fname, lname: lname, role: role, id: id},
+                    success : function(response) {
+                        console.log(response);
+                    }
+                })
+            });
+        });
     </script>
+
+    <script src="../../src/js/header.js"></script>
+    <script src="../../src/js/modal.js"></script>
 </body>
 </html>

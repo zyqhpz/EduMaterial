@@ -32,34 +32,42 @@
         <h1>Donate Form</h1>
         <div class="container">
             <!-- <form action="action_page.php"> -->
-            <form action="#" method="POST">
+        <?php require_once '../dashboard/process.php'; ?>
+        <?php
+            $mysqli = new mysqli('localhost', 'root', '', 'webapp') or die(mysqli_error($mysqli));
+            $result = $mysqli->query("SELECT * FROM material") or die($mysqli->error);
+        ?>
+            <form action="../dashboard/process.php" method="POST">
+            <input type="hidden" name="id" value=101>
           
-              <label for="mat-name">Material Name</label>
-              <input type="text" placeholder="Put your material name here..">
+              <label for="name">Material Name</label>
+              <input type="text" name="name" placeholder="Put your material name here..">
 
               <label for="subject">Material Description</label>
-              <textarea id="subject" name="subject" placeholder="Write description.." style="height:100px"></textarea>
+              <textarea id="subject" name="desc" placeholder="Write description.." style="height:100px"></textarea>
               
               <label for="category">Category</label>
               <select id="category" name="category">
-                <option value="math">Mathematics</option>
-                <option value="science">Science</option>
-                <option value="comp-sci">Computer Science</option>
-                <option value="philo">Philosophy</option>
-                <option value="art">Art</option>
+                <option value="none" selected disabled hidden>Select material category</option>
+                <option value="1">Mathematics</option>
+                <option value="2">Science</option>
+                <option value="3">Computer Science</option>
+                <option value="4">Philosophy</option>
+                <option value="5">Art</option>
               </select>
-          
+              
               <label for="mat-type">Material Type</label>
-              <select id="mat-type" name="mat-type">
+              <select id="mat-type" name="type">
+                <option value="none" selected disabled hidden>Select material type</option>
                 <option value="video">Video</option>
                 <option value="ebook">E-Book</option>
               </select>
           
               <label for="mat-file">Material File</label>
-              <input type="text" placeholder="Put the material link here..">
+              <input type="text" name="file" placeholder="Put the material link here..">
               <br>
 
-              <input type="submit" value="Submit">
+              <input type="submit" value="Submit" name="submit">
           
             </form>
           </div>
