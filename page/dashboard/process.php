@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+//session_start();
 
 $mysqli = new mysqli('localhost', 'root', '', 'webapp') or die(mysqli_error($mysqli));
 

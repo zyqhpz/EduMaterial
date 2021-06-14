@@ -4,20 +4,13 @@
         <!-- meta -->	
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <meta name="description" content="New Login Form web template" />
-        <meta name="author" content="Elm0D" />
-        <meta name="keywords" content="New Login Form web template, Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
-        <!-- favicon -->
-        <link rel="shortcut icon" href="img/ico/favicon.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/ico/apple-touch-icon-144-precomposed.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/ico/apple-touch-icon-114-precomposed.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/ico/apple-touch-icon-72-precomposed.png" />
-        <link rel="apple-touch-icon-precomposed" href="img/ico/apple-touch-icon-57-precomposed.png">
      
         <link rel="stylesheet" href="lib/font-awesome-4.4.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
       
          <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500' rel='stylesheet' type='text/css'>
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
         <!-- Custom css -->
         <link href="../../src/css/login.css" rel="stylesheet" type="text/css" media="all" />
     </head>
@@ -45,23 +38,21 @@
             <!--login start here-->
             <div class="login">
 				
-            <form action="#0">
+            <form action="proc.php" method="POST">
 
             <h3>Email</h3>
             <label for="email" class="emailBox">
-                <input type="email" id="email" placeholder="Enter your email">
+                <input type="email" id="email" name="email" placeholder="Enter your email">
                 <span class="emailText"></span>
             </label>
 
             <h3>Password</h3>
             <label for="password" class="passBox">
-                <input type="password" id="password" placeholder="Enter your password">
+                <input type="password" id="pass" name="pass" placeholder="Enter your password">
                 <span class="passText"></span>
             </label>
 
-            <div class="login-bottom">
-                <div class="reg-bwn"><a href="../dashboard/admin.php">Login
-                    </a></div>
+            <input type="submit" name="login" value="Login">
                     <!-- <a href="/page/dashboard/admin.html">
                         <button id="btn-submit">Login</button>
                     </a> -->
@@ -97,7 +88,24 @@
             </div><!-- End copyright -->
         </div>
         </div>
-        
+        <script>
+            //  $(document).ready(function() {
+            //     $('#login').click(function() {
+            //         var email = $('#email').val();
+            //         var pass = $('#pass').val();
+
+            //         $.ajax({
+            //             url     : 'proc.php',
+            //             method  : 'post',
+            //             data    : {email: email, pass: pass},
+            //             success : function(response) {
+            //                 console.log(response);
+            //             }
+            //         })
+            //     });
+            // })
+        </script>
+         
         <script src="../../src/js/login.js"></script>
     </body>
 </html>

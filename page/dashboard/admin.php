@@ -1,5 +1,9 @@
 <?php
     include('edit-donator.php');
+    session_start();
+
+    $mysqli = new mysqli('localhost', 'root', '', 'webapp') or die(mysqli_error($mysqli));
+    $result = $mysqli->query("SELECT * FROM user") or die($mysqli->error);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,9 +12,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EduMaterial | Admin</title>
-    <link rel="stylesheet" type="text/css" href="../../src/css/header.css">
+    <link rel="stylesheet" type="text/css" href="../../src/css/header.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" type="text/css" href="../../src/css/donate.css">
-    <link rel="stylesheet" type="text/css" href="../../src/css/dashboard.css">
+    <link rel="stylesheet" type="text/css" href="../../src/css/dashboard.css?v=<?php echo time(); ?>">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -25,7 +29,8 @@
             <li><a href="../../page/about-us/about_us.php">About Us</a></li>
             <li><a class="active" id="log" href="#"><i class="fas fa-user"></i></a>
                 <ul>
-                    <li><a href="/page/login/login.php">Logout</a></li>
+                    <li><a href="../login/login.php">Logout</a></li>
+                    <?php session_reset(); ?>
                 </ul>
             </li>
         </ul>
@@ -45,13 +50,19 @@
         </ul>
     </div>
     <div class="main">
-        <h1>Admin Dashboard</h1>
-        <h2>Donator Namelist</h2>
-        <?php require_once 'process.php'; ?>
         <?php
-            $mysqli = new mysqli('localhost', 'root', '', 'webapp') or die(mysqli_error($mysqli));
-            $result = $mysqli->query("SELECT * FROM user") or die($mysqli->error);
+        $uName;
+        if (isset($_SESSION['user_id'])):
+            while ($row = $result->fetch_assoc()):
+                if ($row['user_id'] == $_SESSION['user_id']) {
+                    $uName = $row['user_firstname'];
+                }
+            endwhile;
         ?>
+        <p>Welcome <strong><?php echo $uName?></strong> </p>
+        <h1>Admin Dashboard</h1>
+        <?php endif?>
+        <h2>Donator Namelist</h2>
         <table class="styled-table">
             <thead>
                 <tr>
@@ -63,6 +74,8 @@
             </thead>
             <tbody>
             <?php
+                $mysqli = new mysqli('localhost', 'root', '', 'webapp') or die(mysqli_error($mysqli));
+                $result = $mysqli->query("SELECT * FROM user") or die($mysqli->error);
                 while ($row = $result->fetch_assoc()): 
                 ?>
                 <tr>

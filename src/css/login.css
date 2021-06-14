@@ -205,6 +205,9 @@ form {
   color: red;
   text-align: left;
 }
+.login form p {
+  color: red;
+}
 .login form label {
  font-weight: 300;
  font-size: small;
@@ -655,4 +658,8 @@ label.invalid::before{
 
 }
 
+#err {
+  color: red;
+  font-size: 16px;  
+}
 /*--//responsive--*/

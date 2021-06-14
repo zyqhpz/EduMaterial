@@ -1,5 +1,10 @@
 <?php
     include('edit-material.php');
+    session_start();
+
+
+    $mysqli = new mysqli('localhost', 'root', '', 'webapp') or die(mysqli_error($mysqli));
+    $result = $mysqli->query("SELECT * FROM user") or die($mysqli->error);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,9 +13,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EduMaterial | Donator</title>
-    <link rel="stylesheet" type="text/css" href="../../src/css/header.css">
+    <link rel="stylesheet" type="text/css" href="../../src/css/header.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" type="text/css" href="../../src/css/donate.css">
-    <link rel="stylesheet" type="text/css" href="../../src/css/dashboard.css">
+    <link rel="stylesheet" type="text/css" href="../../src/css/dashboard.css?v=<?php echo time(); ?>">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -25,7 +30,7 @@
             <li><a href="../../page/about-us/about_us.php">About Us</a></li>
             <li><a class="active" id="log" href="#"><i class="fas fa-user"></i></a>
                 <ul>
-                    <li><a href="../../page/login/login.php">Logout</a></li>
+                    <li><a href="../login/logout.php">Logout</a></li>
                 </ul>
             </li>
         </ul>
@@ -51,8 +56,19 @@
         </ul>
     </div>
     <div class="main">
-        
+        <?php
+        $uName;
+        if (isset($_SESSION['user_id'])):
+            while ($row = $result->fetch_assoc()):
+                if ($row['user_id'] == $_SESSION['user_id']) {
+                    $uName = $row['user_firstname'];
+                }
+            endwhile;
+    
+        ?>
+        <p>Welcome <strong><?php echo $uName?></strong> </p>
         <h1>Donator Dashboard</h1>
+        <?php endif?>
         <h2>Material List</h2>
         <?php require_once 'process.php'; ?>
         <?php
@@ -71,7 +87,7 @@
             <tbody>
             <?php
                 while ($row = $result->fetch_assoc()): 
-                    if ($row['user_id'] == 101) {
+                    if ($row['user_id'] == $_SESSION['user_id']) {
                 ?>
                 <tr>
                     <tr id="<?php echo $row['material_id'];?>"></tr>
@@ -95,6 +111,9 @@
                     </td>
                 </tr>
                 <?php
+                    }
+                    else {
+                        ?>  <?php
                     }
                  endwhile; ?>
             </tbody>

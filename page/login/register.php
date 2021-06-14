@@ -4,17 +4,7 @@
         <!-- meta -->	
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <meta name="description" content="New Login Form web template" />
-        <meta name="author" content="Elm0D" />
-        
-        <!-- favicon -->
-        <link rel="shortcut icon" href="img/ico/favicon.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/ico/apple-touch-icon-144-precomposed.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/ico/apple-touch-icon-114-precomposed.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/ico/apple-touch-icon-72-precomposed.png" />
-        <link rel="apple-touch-icon-precomposed" href="img/ico/apple-touch-icon-57-precomposed.png">
        
-        <link rel="stylesheet" href="lib/font-awesome-4.4.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 
         <!-- Google Fonts-->
@@ -29,12 +19,6 @@
                 <i class="fas fa-home"></i>
             </a>
             <h1><strong>Register Page</strong></h1>
-            <div class="description">
-                <p>
-                   
-                   
-                </p>
-            </div>
         </div>
         <!----//End header---->
 
@@ -45,28 +29,44 @@
                 <!--login start here-->
                 <div class="login">
                     <p class="span line-left">Enter your details to create an account.</p>
-            <form action="#" method="post">
-                <h3>Full Name</h3>
+            <form action="proc.php" method="POST">
+                <h3>First Name</h3>
                 <label class="nameBox">
-                    <input type="text" id="name" placeholder="Enter your name">
+                    <input type="text" name="fname" id="fname" placeholder="Enter your first name">
+                    <span class="emailText1"></span>
+                </label>
+                
+                <h3>Last Name</h3>
+                <label class="nameBox">
+                    <input type="text" name="lname" id="lname" placeholder="Enter your last name">
                     <span class="emailText1"></span>
                 </label>
                 
                 <h3>Email Address</h3>
                 <label class="emailBox">
-                    <input type="email" id="email" placeholder="Enter your email">
+                    <input type="email" name="email" id="email" placeholder="Enter your email">
                     <span class="emailText"></span>
                 </label>
 
                 <h3>Password</h3>
                 <label class="passBox">
-                    <input type="password" id="password" placeholder="Enter your password">
+                    <input type="password" name="password" id="pass" placeholder="Enter your password">
                     <span class="passText"></span>
                 </label>
                 <div class="login-bwn">
-                    <input type="submit" value="Register" />
+                    <input type="submit" id="submit" name="submit" value="Register" />
                 </div>
-
+                <?php
+                    $err = "err";
+                    if (isset($_GET['error'])) {
+                        if ($_GET['error'] == "emptyinput") {
+                            echo "<h id=".$err." style="."color: red"."; > Fill in all fields! </h>";
+                        }
+                        if ($_GET['error'] == "none") {
+                            echo "<h>New account created</h>";
+                        }
+                    }
+                ?>
                 <div class="login-bottom">
                     <h4>Already have an Account?</a></h4>
                     <div class="reg-bwn"><a href="login.php">Login Now!</a></div>
@@ -75,8 +75,9 @@
                 </div>
                 <!--login end here-->
             </div>
-
         </div>
+        
+
         <!-- End Body -->
 
         <!-- Start footer-wrapper -->
@@ -94,5 +95,24 @@
   
         <script src="lib/jquery-1.8.1.min.js"></script>
         <script src="../../src/js/login.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('#submit').click(function() {
+                    var fname = $('#fname').val();
+                    var lname = $('#lname').val();
+                    var email = $('#email').val();
+                    var pass = $('#pass').val();
+
+                    $.ajax({
+                        url     : 'proc.php',
+                        method  : 'post',
+                        data    : {fname: fname, lname: lname, email: email, pass: pass},
+                        success : function(response) {
+                            console.log(response);
+                        }
+                    })
+                });
+            })
+        </script>
     </body>
 </html>

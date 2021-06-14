@@ -1,3 +1,12 @@
+<?php 
+// include('../login/proc.php');
+session_start();
+    $uID;
+    if (isset($_SESSION['user_id']))
+        $uID = $_SESSION['user_id'];
+    else
+        $uID = NULL;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,9 +28,25 @@
             <li><a href="../../page/material/math.php">Material</a></li>
             <li><a href="../../page/about-us/about_us.php">About Us</a></li>
             <!-- click to dashboard based on user_role / donator or admin -->
+            <?php
+            if (isset($_SESSION['user_id'])) {
+                if ($_SESSION['items']['Role'] == 1) {
+            ?>
+            <li><a id="log" href="../../page/dashboard/donator.php"><i class="fas fa-user"></i></a>
+            <?php }
+                else {
+            ?>
             <li><a id="log" href="../../page/dashboard/admin.php"><i class="fas fa-user"></i></a>
+            <?php } 
+            }
+            else {
+            ?>
+            <li><a href="../../page/login/login.php">Login</a></li>
+            <?php
+            }
+            ?>
                 <ul>
-                    <li><a href="/page/login/login.php">Logout</a></li>
+                    <li><a href="../login/login.php">Logout</a></li>
                 </ul>
             </li>
         </ul>
@@ -31,14 +56,16 @@
     <div class="main">
         <h1>Donate Form</h1>
         <div class="container">
-            <!-- <form action="action_page.php"> -->
         <?php require_once '../dashboard/process.php'; ?>
         <?php
             $mysqli = new mysqli('localhost', 'root', '', 'webapp') or die(mysqli_error($mysqli));
             $result = $mysqli->query("SELECT * FROM material") or die($mysqli->error);
         ?>
+        <script>
+            console.log(<?php echo $uID; ?>);
+        </script>
             <form action="../dashboard/process.php" method="POST">
-            <input type="hidden" name="id" value=101>
+            <input type="hidden" name="id" value=<?php echo $uID ?>>
           
               <label for="name">Material Name</label>
               <input type="text" name="name" placeholder="Put your material name here..">
