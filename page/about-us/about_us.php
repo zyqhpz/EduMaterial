@@ -1,3 +1,12 @@
+<?php
+    session_start();
+
+    $uID;
+    if (isset($_SESSION['user_id']))
+        $uID = $_SESSION['user_id'];
+    else
+        $uID = NULL;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +28,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Rancho&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
     
     <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
 
@@ -34,7 +44,27 @@
             <li><a href="../donate/donate.php">Donate</a></li>
             <li><a href="../material/math.php">Material</a></li>
             <li><a href="../about-us/about_us.php" class="active">About Us</a></li>
-            <li><a href="../login/login.php">Login</a></li>
+            <?php
+            if (isset($_SESSION['user_id'])) {
+                if ($_SESSION['items']['Role'] == 1) {
+            ?>
+            <li><a id="log" href="../../page/dashboard/donator.php"><i class="fas fa-user"></i></a>
+            <?php }
+                else {
+            ?>
+            <li><a id="log" href="../../page/dashboard/admin.php"><i class="fas fa-user"></i></a>
+            <?php } 
+            }
+            else {
+            ?>
+            <li><a href="../../page/login/login.php">Login</a></li>
+            <?php
+            }
+            ?>
+                <ul>
+                    <li><a href="../login/logout.php">Logout</a></li>
+                </ul>
+            </li>
         </ul>
     </header>
     <section>

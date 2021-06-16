@@ -29,8 +29,7 @@
             <li><a href="../../page/about-us/about_us.php">About Us</a></li>
             <li><a class="active" id="log" href="#"><i class="fas fa-user"></i></a>
                 <ul>
-                    <li><a href="../login/login.php">Logout</a></li>
-                    <?php session_reset(); ?>
+                    <li><a href="../login/logout.php">Logout</a></li>
                 </ul>
             </li>
         </ul>
@@ -124,8 +123,8 @@
                     <label for="role">Role</label>
                     <select id="role" name="role">
                         <option value="none" selected disabled hidden>Select user role</option>
-                        <option <?php if ($role == '1') echo "selected"; ?> value="1">Donator</option>
-                        <option <?php if ($role == '0') echo "selected"; ?> value="0">Admin</option>
+                        <option <?php if ($id == '1') echo "selected"; ?> value="1">Donator</option>
+                        <option <?php if ($id == '0') echo "selected"; ?> value="0">Admin</option>
                     </select>
                     <div class="modal-footer">
                         <input type="submit" value="Update" name="update">

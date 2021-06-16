@@ -24,7 +24,27 @@
             <li><a href="page/donate/donate.php">Donate</a></li>
             <li><a href="page/material/math.php">Material</a></li>
             <li><a href="page/about-us/about_us.php">About Us</a></li>
+            <?php
+            if (isset($_SESSION['user_id'])) {
+                if ($_SESSION['items']['Role'] == 1) {
+            ?>
+            <li><a id="log" href="page/dashboard/donator.php"><i class="fas fa-user"></i></a>
+            <?php }
+                else {
+            ?>
+            <li><a id="log" href="page/dashboard/admin.php"><i class="fas fa-user"></i></a>
+            <?php } 
+            }
+            else {
+            ?>
             <li><a href="page/login/login.php">Login</a></li>
+            <?php
+            }
+            ?>
+                <ul>
+                    <li><a href="page/login/logout.php">Logout</a></li>
+                </ul>
+            </li>
         </ul>
     </nav>
 </head>

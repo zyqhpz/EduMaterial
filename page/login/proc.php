@@ -65,7 +65,9 @@
                     
                 }
                 else {
-                    echo "Error";
+                    header("location: login.php");
+                    //echo "Error";
+                    //exit();
                 }
                 exit();
             endwhile;

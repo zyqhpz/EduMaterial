@@ -46,7 +46,7 @@ session_start();
             }
             ?>
                 <ul>
-                    <li><a href="../login/login.php">Logout</a></li>
+                    <li><a href="../login/logout.php">Logout</a></li>
                 </ul>
             </li>
         </ul>

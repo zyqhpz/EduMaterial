@@ -1,27 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduMaterial | Material</title>
-    <link rel="stylesheet" type="text/css" href="../../src/css/header.css">
-    <link rel="stylesheet" type="text/css" href="../../src/css/material.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-    
-    <nav id="header">
-        <a href="/index.php" class="logo">EduMaterial</a>
-        <div class="toggle"></div>
-        <ul class="navigation">
-            <li><a href="../../index.php">Home</a></li>
-            <li><a href="../../page/donate/donate.php">Donate</a></li>
-            <li><a href="../../math.php" class="active">Material</a></li>
-            <li><a href="../../page/about-us/about_us.php">About Us</a></li>
-            <li><a href="../../page/login/login.php">Login</a></li>
-        </ul>
-    </nav>
-</head>
+<?php
+    include('h.php');
+?>
 <body>
     <div class="sidebar">
         <h1 id="title">Subjects</h1>
