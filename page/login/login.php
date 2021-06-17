@@ -35,10 +35,14 @@
             <div class="sub-main">
                 <h2 class="sub-heading">Login To Start Donate</h2>
 
+                <?php if (isset($_GET['message']))
+                echo '<h3 style="color:red;text-shadow: 3px 3px 5px black;"> ******* ' . $_GET['message'] . ' *******</h3>'
+            ?>
+
             <!--login start here-->
             <div class="login">
 				
-            <form action="proc.php" method="POST">
+            <form action="auth.php" method="POST">
 
             <h3>Email</h3>
             <label for="email" class="emailBox">
@@ -53,9 +57,6 @@
             </label>
 
             <input type="submit" name="login" value="Login">
-                    <!-- <a href="/page/dashboard/admin.html">
-                        <button id="btn-submit">Login</button>
-                    </a> -->
                 <h4>Don't have an Account?</a></h4>
                     <div class="reg-bwn"><a href="register.php">Register Now!</a></div>
                 </div>
@@ -88,24 +89,7 @@
             </div><!-- End copyright -->
         </div>
         </div>
-        <script>
-            //  $(document).ready(function() {
-            //     $('#login').click(function() {
-            //         var email = $('#email').val();
-            //         var pass = $('#pass').val();
 
-            //         $.ajax({
-            //             url     : 'proc.php',
-            //             method  : 'post',
-            //             data    : {email: email, pass: pass},
-            //             success : function(response) {
-            //                 console.log(response);
-            //             }
-            //         })
-            //     });
-            // })
-        </script>
-         
         <script src="../../src/js/login.js"></script>
     </body>
 </html>

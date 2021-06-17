@@ -26,6 +26,9 @@
         <div class="content-wrapper">
             <div class="sub-main">
                 <h2 class="sub-heading">Join us now!</h2>
+                <?php if (isset($_GET['message']))
+                echo '<h3 style="color:red;text-shadow: 3px 3px 5px black;"> ******* ' . $_GET['message'] . ' *******</h3>'
+            ?>
                 <!--login start here-->
                 <div class="login">
                     <p class="span line-left">Enter your details to create an account.</p>
@@ -56,17 +59,6 @@
                 <div class="login-bwn">
                     <input type="submit" id="submit" name="submit" value="Register" />
                 </div>
-                <?php
-                    $err = "err";
-                    if (isset($_GET['error'])) {
-                        if ($_GET['error'] == "emptyinput") {
-                            echo "<h id=".$err." style="."color: red"."; > Fill in all fields! </h>";
-                        }
-                        if ($_GET['error'] == "none") {
-                            echo "<h>New account created</h>";
-                        }
-                    }
-                ?>
                 <div class="login-bottom">
                     <h4>Already have an Account?</a></h4>
                     <div class="reg-bwn"><a href="login.php">Login Now!</a></div>
@@ -104,7 +96,7 @@
                     var pass = $('#pass').val();
 
                     $.ajax({
-                        url     : 'proc.php',
+                        url     : 'auth.php',
                         method  : 'post',
                         data    : {fname: fname, lname: lname, email: email, pass: pass},
                         success : function(response) {
