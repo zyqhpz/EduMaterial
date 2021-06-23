@@ -38,24 +38,6 @@
     </div>
     <div class="main">
         <h2>Mathematics</h2>
-        <!-- <div class="topic-list">
-            <div id="video">
-                <ul>
-                    <h3>Videos</h3>
-                    <li><a href="https://www.youtube.com/watch?v=HfACrKJ_Y2w" target="_blank">Calculus</a> by Mr. A</li>
-                    <li><a href="https://www.youtube.com/watch?v=LwCRRUa8yTU" target="_blank">Algebra</a> by Mrs. B</li>
-                    <li><a href="https://www.youtube.com/watch?v=xxpc-HPKN28" target="_blank">Statistics</a> by Ms. C</li>
-                </ul>
-            </div>
-            <div id="book">
-                <ul>
-                    <h3>E-Book</h3>
-                    <li><a href="https://ocw.mit.edu/ans7870/resources/Strang/Edited/Calculus/Calculus.pdf" target="_blank">Calculus</a> by Mr. A</li>
-                    <li><a href="https://www.math.stonybrook.edu/~aknapp/download/b2-alg-inside.pdf" target="_blank">Algebra</a> by Mrs. B</li>
-                    <li><a href="http://www.utstat.toronto.edu/mikevans/jeffrosenthal/book.pdf" target="_blank">Probability and Statistics</a> by Ms. C</li>
-                </ul>
-            </div>
-        </div> -->
         <div class=topic-list>
             <div id="video">
                 <ul>

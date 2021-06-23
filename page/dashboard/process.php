@@ -89,8 +89,6 @@ if (isset($_POST['submit'])) {
     // $_SESSION['message'] = "Record has been updated!";
     // $_SESSION['msg_type'] = "success";
 
-    header("location: ../donate/donate.php");
-
-    echo "<div>Success</div>";
+    header("location: ../donate/donate.php?message=Material submitted! Thank you.");
 }
 ?>

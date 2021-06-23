@@ -38,24 +38,6 @@
     </div>
     <div class="main">
         <h2>Philosophy</h2>
-        <!-- <div class="topic-list">
-            <div id="video">
-                <ul>
-                    <h3>Videos</h3>
-                    <li><a href="https://www.youtube.com/watch?v=kBdfcR-8hEY&list=PL72C62342291D5DAE" target="_blank">Philosophy Lecture: Justice</a> by Mr. A</li>
-                    <li><a href="https://www.youtube.com/watch?v=BNYJQaZUDrI&list=PL8dPuuaLjXtNgK6MZucdYldNkMybYIHKR" target="_blank">Philosophy Crash Course</a> by Mrs. B</li>
-                    <li><a href="https://www.youtube.com/watch?v=_tCl66AbkqI" target="_blank">Philosophy for Beginners</a> by Ms. C</li>
-                </ul>
-            </div>
-            <div id="book">
-                <ul>
-                    <h3>E-Book</h3>
-                    <li><a href="https://openlibrary-repo.ecampusontario.ca/jspui/bitstream/123456789/475/2/Intro-to-Phil-full-text.pdf" target="_blank">An Introduction to Philosophy</a> by Mr. A</li>
-                    <li><a href="http://www.mesacc.edu/~barsp59601/text/101/notes/textbook.pdf" target="_blank">Philosophy 101: Introduction to Western Philosophy</a> by Mrs. B</li>
-                    <li><a href="https://global.oup.com/us/companion.websites/9780199812998/studentresources/pdf/perry_glossary.pdf" target="_blank">Glossary of Philosophical Terms</a> by Ms. C</li>
-                </ul>
-            </div>
-        </div> -->
         <div class=topic-list>
             <div id="video">
                 <ul>

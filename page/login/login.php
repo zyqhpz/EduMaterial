@@ -36,7 +36,7 @@
                 <h2 class="sub-heading">Login To Start Donate</h2>
 
                 <?php if (isset($_GET['message']))
-                echo '<h3 style="color:red;text-shadow: 3px 3px 5px black;"> ******* ' . $_GET['message'] . ' *******</h3>'
+                echo '<h3 style="color:red;text-shadow: 3px 3px 5px black;">' . $_GET['message'] . '</h3>'
             ?>
 
             <!--login start here-->
@@ -46,25 +46,25 @@
 
             <h3>Email</h3>
             <label for="email" class="emailBox">
-                <input type="email" id="email" name="email" placeholder="Enter your email">
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
                 <span class="emailText"></span>
             </label>
 
             <h3>Password</h3>
             <label for="password" class="passBox">
-                <input type="password" id="pass" name="pass" placeholder="Enter your password">
+                <input type="password" id="pass" name="pass" placeholder="Enter your password" required>
                 <span class="passText"></span>
             </label>
 
             <input type="submit" name="login" value="Login">
-                <h4>Don't have an Account?</a></h4>
-                    <div class="reg-bwn"><a href="register.php">Register Now!</a></div>
-                </div>
+            </form>
+            <h4>Don't have an Account?</a></h4>
+                <div class="reg-bwn"><a href="register.php">Register Now!</a></div>
+            </div>
             </div>
                 <a href="reset.php"> Forgot Password? </a>
                 <div class="clear"> </div>
 
-            </form>
 					
 						<script>
 
@@ -90,6 +90,6 @@
         </div>
         </div>
 
-        <script src="../../src/js/login.js"></script>
+        <!-- <script src="../../src/js/login.js"></script> -->
     </body>
 </html>

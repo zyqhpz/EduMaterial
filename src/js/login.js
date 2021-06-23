@@ -29,7 +29,7 @@ function checkPass(){
 }
 
 const email = document.getElementById("email");
-const password = document.getElementById("password");
+const password = document.getElementById("pass");
 
 email.addEventListener('input',()=>{
   const emailBox = document.querySelector('.emailBox');

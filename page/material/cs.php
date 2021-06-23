@@ -38,24 +38,6 @@
     </div>
     <div class="main">
         <h2>Computer Science</h2>
-        <!-- <div class="topic-list">
-            <div id="video">
-                <ul>
-                    <h3>Videos</h3>
-                    <li><a href="https://www.youtube.com/watch?v=rfscVS0vtbw" target="_blank">Python</a> by Mr. A</li>
-                    <li><a href="https://www.youtube.com/watch?v=vLnPwxZdW4Y" target="_blank">C++</a> by Mrs. B</li>
-                    <li><a href="https://www.youtube.com/watch?v=PkZNo7MFNFg" target="_blank">Javascript Tutorial</a> by Ms. C</li>
-                </ul>
-            </div>
-            <div id="book">
-                <ul>
-                    <h3>E-Book</h3>
-                    <li><a href="https://www.greenteapress.com/thinkpython/thinkpython.pdf" target="_blank">Python for Computer Scientist</a> by Mr. A</li>
-                    <li><a href="https://www.cplusplus.com/files/tutorial.pdf" target="_blank">C++ Tutorial</a> by Mrs. B</li>
-                    <li><a href="https://eloquentjavascript.net/Eloquent_JavaScript.pdf" target="_blank">Javascript 3rd Edition</a> by Ms. C</li>
-                </ul>
-            </div>
-        </div> -->
         <div class=topic-list>
             <div id="video">
                 <ul>

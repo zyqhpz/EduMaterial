@@ -38,24 +38,6 @@
     </div>
     <div class="main">
         <h2>Science</h2>
-        <!-- <div class="topic-list">
-            <div id="video">
-                <ul>
-                    <h3>Videos</h3>
-                    <li><a href="https://www.youtube.com/watch?v=1C8CFSMvL20&list=PLezrE0Ume1TpVEGkTk8w7phwCqOwiW_PJ" target="_blank">Microbiology</a> by Mr. A</li>
-                    <li><a href="https://www.youtube.com/watch?v=qPix_X-9t7E&list=PLOA0aRJ90NxuIgOC9YGRUT4Y-CsP12bsS" target="_blank">Neuroscience</a> by Mrs. B</li>
-                    <li><a href="https://www.youtube.com/watch?v=OoO5d5P0Jn4&list=PL8dPuuaLjXtN0ge7yDk_UA0ldZJdhwkoV" target="_blank">Physics Crash Course</a> by Ms. C</li>
-                    <li><a href="https://www.youtube.com/watch?v=bSMx0NS0XfY&list=PL8dPuuaLjXtONguuhLdVmq0HTKS0jksS4" target="_blank">Organic Chemistry</a> by Ms. D</li>
-                </ul>
-            </div>
-            <div id="book">
-                <ul>
-                    <h3>E-Book</h3>
-                    <li><a href="http://www.grsmu.by/files/file/university/cafedry/microbiologii-virysologii-immynologii/files/essential_microbiology.pdf" target="_blank">Essential Microbiology</a> by Mr. A</li>
-                    <li><a href="https://authors.library.caltech.edu/25032/1/Organic_Chemistry.pdf" target="_blank">Organic Chemistry</a> by Mrs. B</li>
-                </ul>
-            </div>
-        </div> -->
         <div class=topic-list>
             <div id="video">
                 <ul>

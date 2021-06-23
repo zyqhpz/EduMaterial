@@ -36,7 +36,7 @@
         if ($stmt->execute()) {
             $result = $stmt->get_result();
             $row = $result->fetch_assoc();
-            if ($pass == $row['user_password']) {
+            if ($pass == $row['user_password'] && $email == $row['user_email']) {
                 $stmt->close();
                 session_start();
                 $role = $row['user_role'];
@@ -54,6 +54,18 @@
             header("Location: login.php?message=Login Failed!. Try again");
         }
 
+    }
+    if (isset($_POST['reset'])) {
+        $pass = $_POST['pass'];
+        $email = $_POST['email'];
+
+        $query = "SELECT * FROM user WHERE user_email = '$email'";
+        $result = mysqli_query($mysqli, $query);
+        if ($result) {
+                $syntax = "UPDATE user SET user_password='$pass' WHERE user_email='$email'";
+                $mysqli->query($syntax) or die($mysqli->error);
+                header("Location: login.php?message=Password has been reset");
+        }
     }
 
 ?>

@@ -31,6 +31,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
     
     <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 
 </head>
 <body>
@@ -122,12 +124,12 @@
              <div class="content">
                  <div class="imgBx"><img src="../..\src\image\team\zyqq.jpg"></div>
                  <div class="content8x">
-                     <h3>Haziq Hapiz<br><span>Creative Designer</span></h3>
+                     <h3>Haziq Hapiz<br><span>Web Designer</span></h3>
                     </div>
                 </div>
                 <ul class="sci">
                     <li style="--i:1">
-                    <a href="#"><i class="icofont-plus-circle"></i></a>
+                    <a target="_blank" href="../bio/haziq.php"><i class="icofont-plus-circle"></i></a>
                     </li>
                 </ul>
             </div>
@@ -150,7 +152,7 @@
                 <div class="content">
                     <div class="imgBx"><img src="../..\src\image\team\abdullah.jpg"></div>
                     <div class="content8x">
-                        <h3>Someone Smart<br><span>Software Developer</span></h3>
+                        <h3>Abdulllah<br><span>Web Developer</span></h3>
                     </div>
                 </div>
                 <ul class="sci">
@@ -163,9 +165,9 @@
             <div class="container">
                 <div class="card">
                     <div class="content">
-                        <div class="imgBx"><img src="../..\src\image\team\haziq.jpg"></div>
+                        <div class="imgBx"><img src="../..\src\image\team\ali.jpg"></div>
                         <div class="content8x">
-                            <h3>Someone Flexible<br><span>Stakeholders</span></h3>
+                            <h3>Ali Mazin<br><span>Web Developer</span></h3>
                            </div>
                        </div>
                        <ul class="sci">
@@ -208,7 +210,7 @@
                 </div>
             </div>
           <div class="column">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="../../forms/contact.php" method="post" role="form" class="php-email-form">
                 <div class="form-row">
                   <div class="col-md-6 form-group">
                     <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
@@ -258,7 +260,7 @@
     
     <!-- Template JavaScript Files-->
     <script src="../../src/js/header.js"></script>
-    <script src="../../src/js/validate.js"></script>
+    <script src="../../assets\php-email-form\validate.js"></script>
 
 </body>
 </html>

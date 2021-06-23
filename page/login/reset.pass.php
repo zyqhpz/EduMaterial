@@ -1,3 +1,11 @@
+<?php
+    $mysqli = new mysqli('localhost', 'root', '', 'webapp') or die(mysqli_error($mysqli));
+    if(isset($_POST['reset'])) {
+        $email = mysqli_real_escape_string($mysqli, $_POST['email']);
+        $sql = "SELECT * FROM user WHERE user_email='$email'";
+    }
+?>
+
 <html lang="en">
     <head>	
         <title>EduMaterial | Reset Password</title>
@@ -29,16 +37,21 @@
                 <h2 class="sub-heading"> Reset Password</h2>
                 <!--login start here-->
                 <div class="login">
-                    <p class="span line-left">Enter your email to reset your password.</p>
-            <form action="reset.pass.php" method="post">
+                    <p class="span line-left">Reset your password.</p>
+            <form action="auth.php" method="post">
+                <!-- <h3>Email</h3> -->
                 <label class="emailBox">
-                    <input type="email" name="email" id="email" placeholder="Email" required>
+                    <input type="email" id="email" name="email" placeholder="Email" value="<?php echo $email;?>" hidden>
                     <span class="emailText"></span>
                 </label>
+                <h3>Password</h3>
+            <label for="password" class="passBox">
+                <input type="password" id="pass" name="pass" placeholder="Enter your password" required>
+                <span class="passText"></span>
+            </label>
                 <div class="login-bwn">
                     <input type="submit" name="reset" value="Reset" />
                 </div>
-
 
                 <div class="forgot">
                     <div class="login-bottom login-bottom-left">

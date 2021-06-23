@@ -32,28 +32,28 @@
                 <!--login start here-->
                 <div class="login">
                     <p class="span line-left">Enter your details to create an account.</p>
-            <form action="proc.php" method="POST">
+            <form action="auth.php" method="POST">
                 <h3>First Name</h3>
                 <label class="nameBox">
-                    <input type="text" name="fname" id="fname" placeholder="Enter your first name">
+                    <input type="text" name="fname" id="fname" placeholder="Enter your first name" required>
                     <span class="emailText1"></span>
                 </label>
                 
                 <h3>Last Name</h3>
                 <label class="nameBox">
-                    <input type="text" name="lname" id="lname" placeholder="Enter your last name">
+                    <input type="text" name="lname" id="lname" placeholder="Enter your last name" required>
                     <span class="emailText1"></span>
                 </label>
                 
                 <h3>Email Address</h3>
                 <label class="emailBox">
-                    <input type="email" name="email" id="email" placeholder="Enter your email">
+                    <input type="email" name="email" id="email" placeholder="Enter your email" required>
                     <span class="emailText"></span>
                 </label>
 
                 <h3>Password</h3>
                 <label class="passBox">
-                    <input type="password" name="password" id="pass" placeholder="Enter your password">
+                    <input type="password" name="pass" id="pass" placeholder="Enter your password" required>
                     <span class="passText"></span>
                 </label>
                 <div class="login-bwn">
@@ -95,14 +95,7 @@
                     var email = $('#email').val();
                     var pass = $('#pass').val();
 
-                    $.ajax({
-                        url     : 'auth.php',
-                        method  : 'post',
-                        data    : {fname: fname, lname: lname, email: email, pass: pass},
-                        success : function(response) {
-                            console.log(response);
-                        }
-                    })
+
                 });
             })
         </script>

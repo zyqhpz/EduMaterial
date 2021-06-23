@@ -16,6 +16,8 @@ session_start();
     <title>EduMaterial | Donate</title>
     <link rel="stylesheet" type="text/css" href="../../src/css/header.css">
     <link rel="stylesheet" type="text/css" href="..\..\src\css\donate.css">
+    <link rel="icon" href="../../src/image/menu/logo.svg">
+
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
     
@@ -66,35 +68,49 @@ session_start();
         </script>
             <form action="../dashboard/process.php" method="POST">
             <input type="hidden" name="id" value=<?php echo $uID ?>>
-          
-              <label for="name">Material Name</label>
-              <input type="text" name="name" placeholder="Put your material name here..">
+        
+            <label for="name">Material Name</label>
+            <input type="text" name="name" placeholder="Put your material name here.." required>
 
-              <label for="subject">Material Description</label>
-              <textarea id="subject" name="desc" placeholder="Write description.." style="height:100px"></textarea>
-              
-              <label for="category">Category</label>
-              <select id="category" name="category">
-                <option value="none" selected disabled hidden>Select material category</option>
-                <option value="1">Mathematics</option>
-                <option value="2">Science</option>
-                <option value="3">Computer Science</option>
-                <option value="4">Philosophy</option>
-                <option value="5">Art</option>
-              </select>
-              
-              <label for="mat-type">Material Type</label>
-              <select id="mat-type" name="type">
-                <option value="none" selected disabled hidden>Select material type</option>
-                <option value="video">Video</option>
-                <option value="ebook">E-Book</option>
-              </select>
-          
-              <label for="mat-file">Material File</label>
-              <input type="text" name="file" placeholder="Put the material link here..">
-              <br>
+            <label for="subject">Material Description</label>
+            <textarea id="subject" name="desc" placeholder="Write description.." style="height:100px" required></textarea>
+            
+            <label for="category">Category</label>
+            <select id="category" name="category" required>
+            <option value="" selected disabled hidden>Select material category</option>
+            <option value="1">Mathematics</option>
+            <option value="2">Science</option>
+            <option value="3">Computer Science</option>
+            <option value="4">Philosophy</option>
+            <option value="5">Art</option>
+            </select>
+            
+            <label for="mat-type">Material Type</label>
+            <select id="mat-type" name="type" required>
+            <option value="" selected disabled hidden>Select material type</option>
+            <option value="video">Video</option>
+            <option value="ebook">E-Book</option>
+            </select>
+        
+            <label for="mat-file">Material File</label>
+            <input type="text" name="file" placeholder="Put the material link here.." required>
+            <br>
 
-              <input type="submit" value="Submit" name="submit">
+            <?php
+                if (!isset($_SESSION['user_id'])) {
+                    ?>
+                    <input type="submit" disabled style="background-color: grey; pointer-events: none;" value="Submit" name="submit">
+                    <p style="color:red; padding-top:5px">Login to start donating.</p>
+                    <?php
+                }
+                else { ?>
+                <input type="submit" value="Submit" name="submit">
+                    <?php
+                }
+            ?>
+            <?php if (isset($_GET['message']))
+            echo '<h3 style="color:green;"> ' . $_GET['message'] . '</h3>'
+            ?>
           
             </form>
           </div>
